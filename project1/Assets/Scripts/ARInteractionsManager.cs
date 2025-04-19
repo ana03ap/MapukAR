@@ -32,7 +32,7 @@ public class ARInteractionsManager : MonoBehaviour
                 item3DModel.transform.localScale = Vector3.one; // Reset
                 item3DModel.transform.SetParent(null);
                 item3DModel.transform.localScale = Vector3.one * scaleFactor;
-                item3DModel.transform.SetParent(arPointer.transform);
+                item3DModel.transform.SetParent(arPointer.transform); 
 
                 // Centrar y apoyar el modelo sobre el puntero visual (ajustar Y según el modelo)
                 item3DModel.transform.localPosition = new Vector3(0f, -0.1f, 0f);
@@ -46,7 +46,7 @@ public class ARInteractionsManager : MonoBehaviour
     void Start()
     {
         arPointer = transform.GetChild(0).gameObject;
-        arPointer.SetActive(false); // Se activa cuando se selecciona un modelo
+        arPointer.SetActive(false);
     }
 
     void Update()

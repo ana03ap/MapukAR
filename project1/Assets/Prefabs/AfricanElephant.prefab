@@ -25,8 +25,8 @@ Transform:
   m_GameObject: {fileID: 7337695457968575116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.008, y: 0.458, z: -0.018996287}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.01, y: -0.15, z: 0.6}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4441403047275400358}
@@ -42,27 +42,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalScale.y
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalScale.z
-      value: 30
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.037
+      value: 0.098
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.0189962
+      value: -0.07
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalRotation.w
@@ -95,6 +95,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_Name
       value: african_bush_elephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151388028547126963, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: c2f3b2042c34d4341ace3102c467c542, type: 3}
       propertyPath: m_LocalRotation.w

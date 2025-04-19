@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98859006712f5b45a4404e36abc3e6b, type: 3}
   m_Name: Elephant 1
   m_EditorClassIdentifier: 
-  ItemName: Elephant 1
+  ItemName: Afrincan Elephant
   ItemImage: {fileID: 21300000, guid: db70202df42a20e45b78593d0952cf2d, type: 3}
-  ItemDescription: AfricanElephant
+  ItemDescription: ' Loxodonta '
   Item3DModel: {fileID: 7337695457968575116, guid: 59b6850ad6a02be4690d78d00e36726d, type: 3}

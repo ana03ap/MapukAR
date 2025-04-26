@@ -4,6 +4,13 @@ using UnityEngine.EventSystems;
 
 public class ARInteractionsManager : MonoBehaviour
 {
+
+    [Header("Container for Placed Objects")]
+    [SerializeField] private Transform placedObjectsContainer;
+
+
+
+
     [SerializeField] private Camera arCamera;
     [SerializeField] private float moveSpeed = 0.0005f; // Ajusta para velocidad de movimiento
     [SerializeField] private float scaleFactor = 0.25f;  // Tamaño relativo del modelo
@@ -99,9 +106,12 @@ public class ARInteractionsManager : MonoBehaviour
     {
         if (item3DModel != null)
         {
-            item3DModel.transform.SetParent(null);
+            // parent al bucket en lugar de raíz
+            item3DModel.transform.SetParent(placedObjectsContainer, worldPositionStays: true);
+
             arPointer.SetActive(false);
             isPlacing = false;
+            //item3DModel = null;
         }
     }
 

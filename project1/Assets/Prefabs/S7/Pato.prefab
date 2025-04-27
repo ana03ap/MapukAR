@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4003273658511207539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5187087476677267597}
+  m_Layer: 0
+  m_Name: Pato
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5187087476677267597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003273658511207539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.00050997734, y: -0.003105998, z: -0.00018548965}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7964082066181011546}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7569604349571784625
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5187087476677267597}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.93949
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.276894
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.4101853
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4972609
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.05226422
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.8612813
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.09052431
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+      propertyPath: m_Name
+      value: Perched_Bronze_Bird_H_0422195104_texture
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+--- !u!4 &7964082066181011546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 82147f354f556ac48b7500f5e047b9ce, type: 3}
+  m_PrefabInstance: {fileID: 7569604349571784625}
+  m_PrefabAsset: {fileID: 0}

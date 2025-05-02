@@ -1171,14 +1171,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Section2Controller, Assembly-CSharp
-        m_MethodName: ShowAnimal1
-        m_Mode: 1
+      - m_Target: {fileID: 1171319658}
+        m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
+        m_MethodName: ShowAnimal
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3973,14 +3973,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Section2Controller, Assembly-CSharp
-        m_MethodName: ShowAnimal1
-        m_Mode: 1
+      - m_Target: {fileID: 1171319658}
+        m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
+        m_MethodName: ShowAnimal
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4039,7 +4039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1171319657
 Transform:
   m_ObjectHideFlags: 0
@@ -4078,7 +4078,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f89536f6c1fc1564b9d11b7b6c96c563, type: 2}
   - {fileID: 11400000, guid: 4e05f2a64ee42a445be596055d0a420a, type: 2}
   - {fileID: 11400000, guid: 2322fb64871d5d04c9c6d8dcef95cf44, type: 2}
-  - {fileID: 11400000, guid: 4281aeda23da08e4bb0ab4235aaa69df, type: 2}
+  - {fileID: 11400000, guid: 1cffb5f8e6e9be54dba0a7bcb2fe1110, type: 2}
   - {fileID: 11400000, guid: b092fed80015d1b46a7db9200b01921d, type: 2}
   titleText: {fileID: 494624476}
   descriptionText: {fileID: 1246388835}
@@ -6009,7 +6009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1660044453
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7179,63 +7179,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainPPL: {fileID: 1551908714}
   mainMenu: {fileID: 612970047}
---- !u!1001 &2416805974716245962
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3467927258254364942, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_Name
-      value: Murcielago
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0014004707
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0005199909
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00772202
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6854169912597378470, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7250,4 +7193,3 @@ SceneRoots:
   - {fileID: 91423520}
   - {fileID: 1706388506}
   - {fileID: 1888867488}
-  - {fileID: 2416805974716245962}

@@ -1,0 +1,47 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="AnimalDisplayController">
+			<method name="HideAnimal"/>
+			<method name="ShowAnimal"/>
+			<method name="ShowAnimal"/>
+			<method name="ShowAnimal"/>
+			<method name="ShowAnimal"/>
+			<method name="ShowAnimal"/>
+			<method name="ShowAnimal"/>
+		</type>
+		<type fullname="ARInteractionsManager">
+			<method name="ConfirmPlacement"/>
+			<method name="DeleteItem"/>
+		</type>
+		<type fullname="CloseInstructions">
+			<method name="Close"/>
+			<method name="Close"/>
+			<method name="Close"/>
+			<method name="Close"/>
+		</type>
+		<type fullname="FragmentCollector">
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+			<method name="CollectFragment"/>
+		</type>
+		<type fullname="GameManager">
+			<method name="CloseAPP"/>
+			<method name="ItemsMenu"/>
+			<method name="MainMenu"/>
+			<method name="MainMenu"/>
+			<method name="MainMenu"/>
+		</type>
+		<type fullname="GrowImageOnClick">
+			<method name="OnButtonClick"/>
+		</type>
+		<type fullname="SectionPplManager">
+			<method name="GoToInicio"/>
+			<method name="GoToMapa"/>
+		</type>
+	</assembly>
+</linker>

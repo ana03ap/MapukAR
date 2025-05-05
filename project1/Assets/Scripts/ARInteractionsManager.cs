@@ -126,4 +126,17 @@ public class ARInteractionsManager : MonoBehaviour
         arPointer.SetActive(false);
         isPlacing = false;
     }
+
+    /// <summary>
+    /// Limpia todos los objetos instanciados bajo placedObjectsContainer.
+    /// Llama a este método justo antes de cambiar de canvas.
+    /// </summary>
+    public void ClearPlacedObjects()
+    {
+        // Destruye todos los hijos
+        foreach (Transform child in placedObjectsContainer)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

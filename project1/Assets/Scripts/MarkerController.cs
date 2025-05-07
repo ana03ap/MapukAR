@@ -8,10 +8,12 @@ public class MultiSectionMarkerHandler : MonoBehaviour
     public ARTrackedImageManager imageManager;
 
     public GameObject section1;
-    public GameObject section6;
+    public GameObject section4;
+    public GameObject section8; // NUEVO
 
     public GameObject prefabA;
     public GameObject prefabB;
+    public GameObject prefabC; // NUEVO
 
     private Dictionary<string, GameObject> spawnedPrefabs = new Dictionary<string, GameObject>();
 
@@ -50,18 +52,22 @@ public class MultiSectionMarkerHandler : MonoBehaviour
     {
         string markerName = trackedImage.referenceImage.name;
 
-        // Determina si debes responder al marcador según la sección activa
+        // Revisa el nombre del marcador y la sección activa correspondiente
         if (markerName == "MarkerA" && section1.activeSelf)
         {
             ShowOrUpdatePrefab(markerName, prefabA, trackedImage);
         }
-        else if (markerName == "MarkerB" && section6.activeSelf)
+        else if (markerName == "MarkerB" && section4.activeSelf)
         {
             ShowOrUpdatePrefab(markerName, prefabB, trackedImage);
         }
+        else if (markerName == "MarkerC" && section8.activeSelf) // NUEVO
+        {
+            ShowOrUpdatePrefab(markerName, prefabC, trackedImage);
+        }
         else
         {
-            // Si no estás en la sección adecuada, oculta el prefab si está activo
+            // Si no es la sección activa, se oculta
             if (spawnedPrefabs.ContainsKey(markerName))
             {
                 spawnedPrefabs[markerName].SetActive(false);

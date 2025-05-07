@@ -29,6 +29,17 @@ public class SectionFlowManager : MonoBehaviour
             sections[currentSectionIndex].SetActive(true);
         }
     }
+
+
+    public void GoToPreviousSection()
+    {
+        if (currentSectionIndex > 0)
+        {
+            sections[currentSectionIndex].SetActive(false);
+            currentSectionIndex--;
+            sections[currentSectionIndex].SetActive(true);
+        }
+    }
 }
 
 

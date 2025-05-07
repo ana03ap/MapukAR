@@ -19,79 +19,163 @@ public class S2UIManager : MonoBehaviour
         GameManager.instance.OnARPosition += ActivateARPosition;
     }
 
+    //--------/nuevo 
+    private void ResetAllCanvases()
+    {
+        mainPPL.SetActive(false);
+        mainMenuCanvas.SetActive(false);
+        itemsMenuCanvas.SetActive(false);
+        ARPositionCanvas.SetActive(false);
+    }
 
     private void ActivateMainPPL()
     {
+
+        ResetAllCanvases();
+        mainPPL.SetActive(true);
+
+
         mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
 
-        mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-
-        itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
-        itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-        ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
+        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+
+        //mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
+
+        //itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
+        //itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
+        //ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //ARPositionCanvas.transform.DOMoveY(180, 0.3f);
+
+        ResetCanvas(mainMenuCanvas);
+        ResetCanvas(itemsMenuCanvas);
+        ResetCanvas(ARPositionCanvas);
     }
 
     private void ActivateMainMenu()
     {
-        mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
+        ResetAllCanvases();
+        mainMenuCanvas.SetActive(true);
 
 
         mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-       
 
-        itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
-        itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-        ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
+
+        //itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
+        //itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
+        //ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //ARPositionCanvas.transform.DOMoveY(180, 0.3f);
+
+
+        // Asegurar que mainPPL está desactivado y en escala cero
+        ResetCanvas(mainPPL);
+        ResetCanvas(itemsMenuCanvas);
+        ResetCanvas(ARPositionCanvas);
     }
 
     private void ActivateItemsMenu()
     {
 
-        mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        ResetAllCanvases();
+        itemsMenuCanvas.SetActive(true);
+
+        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
 
 
-        mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        
+        //mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
 
         itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.5f);
         itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.5f);
         itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(300, 0.3f);
 
+
+        // Asegurar otros elementos desactivados
+        ResetCanvas(mainPPL);
+        ResetCanvas(mainMenuCanvas);
+        ResetCanvas(ARPositionCanvas);
     }
 
     private void ActivateARPosition()
     {
 
-        mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        ResetAllCanvases();
+        ARPositionCanvas.SetActive(true);
 
-        mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-       
+        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
 
-        itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
-        itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(180, 0.3f);
+        //mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+
+
+        //itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
+        //itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
+        //itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(180, 0.3f);
 
         ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+        
+
+        // Asegurar otros elementos desactivados
+        ResetCanvas(mainPPL);
+        ResetCanvas(mainMenuCanvas);
+        ResetCanvas(itemsMenuCanvas);
     }
 
+
+
+
+    private void ResetCanvas(GameObject canvas)
+    {
+        if (canvas == null) return;
+
+        // Resetear escala de todos los hijos
+        foreach (Transform child in canvas.transform)
+        {
+            child.localScale = Vector3.zero;
+        }
+
+        // Resetear posición si es necesario (para ARPosition)
+        if (canvas == ARPositionCanvas)
+        {
+            canvas.transform.GetChild(1).localPosition = new Vector3(
+                canvas.transform.GetChild(1).localPosition.x,
+                canvas.transform.GetChild(1).localPosition.y,
+                canvas.transform.GetChild(1).localPosition.z
+            );
+        }
+        else if (canvas == itemsMenuCanvas)
+        {
+            canvas.transform.GetChild(1).localPosition = new Vector3(
+                canvas.transform.GetChild(1).localPosition.x,
+                180,
+                canvas.transform.GetChild(1).localPosition.z
+            );
+        }
+    }
 }
+
+
+
+

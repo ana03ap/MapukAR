@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98859006712f5b45a4404e36abc3e6b, type: 3}
+  m_Name: S2-Elephant 1
+  m_EditorClassIdentifier: 
+  ItemName: Afrincan Elephant
+  ItemImage: {fileID: 21300000, guid: db70202df42a20e45b78593d0952cf2d, type: 3}
+  ItemDescription: ' Loxodonta '
+  Item3DModel: {fileID: 7337695457968575116, guid: 59b6850ad6a02be4690d78d00e36726d, type: 3}

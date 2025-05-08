@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98859006712f5b45a4404e36abc3e6b, type: 3}
+  m_Name: S2-Llama
+  m_EditorClassIdentifier: 
+  ItemName: Llama
+  ItemImage: {fileID: 21300000, guid: d746dcabdd3f01b4d88d377f990c2f5b, type: 3}
+  ItemDescription: Hemiauchenia
+  Item3DModel: {fileID: 4144002803637400586, guid: 157c57aef691d6f4b99adaa46eb3d51a, type: 3}

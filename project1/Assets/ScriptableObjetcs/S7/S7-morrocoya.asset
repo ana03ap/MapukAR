@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9404d1aa93077b94db3fa20dde9d3a6c, type: 3}
+  m_Name: S7-morrocoya
+  m_EditorClassIdentifier: 
+  animalName: MORROCOY
+  description: "Para la civilizaci\xF3n Malib\xFA el morrocoy pudo haber simbolizado
+    la longevidad y la conexi\xF3n con la tierra. Su representaci\xF3n en esculturas
+    refleja la importancia de este reptil en su cosmovisi\xF3n, posiblemente asociado
+    a la estabilidad y la sabidur\xEDa ancestral."
+  prefab: {fileID: 8462016145956804035, guid: 7ca05eabb3696104ba9c979e46b6ac1f, type: 3}

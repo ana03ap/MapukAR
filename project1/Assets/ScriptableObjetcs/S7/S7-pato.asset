@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9404d1aa93077b94db3fa20dde9d3a6c, type: 3}
+  m_Name: S7-pato
+  m_EditorClassIdentifier: 
+  animalName: PATO CUCHARA
+  description: "El pato cuchara pudo haber simbolizado la adaptabilidad y la conexi\xF3n
+    con los ecosistemas acu\xE1ticos. Esta ave, reconocida por su distintivo pico
+    ancho, habr\xEDa sido valorada por los Malib\xFA no solo por su papel en el entorno
+    natural, sino tambi\xE9n por su posible significado espiritual."
+  prefab: {fileID: 4003273658511207539, guid: f557c51b42f25014c843408d1f65da13, type: 3}

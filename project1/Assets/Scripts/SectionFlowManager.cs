@@ -2,45 +2,45 @@ using UnityEngine;
 
 public class SectionFlowManager : MonoBehaviour
 {
-    [Header("Canvases de Sección (0 a 6)")]
-    [SerializeField] private GameObject[] sectionCanvases;
-
-    [Header("Contenedor de Objetos AR")]
-    [SerializeField] private Transform placedObjectsContainer;
-
+    public GameObject[] sections; // Array que contiene todas las secciones en orden
     private int currentSectionIndex = 0;
 
     void Start()
     {
-        // Al iniciar, activa sólo la sección 0 y desactiva el resto
-        for (int i = 0; i < sectionCanvases.Length; i++)
-            sectionCanvases[i].SetActive(i == 0);
+        // Al iniciar la app, desactiva todas las secciones excepto la primera (SectionPpl)
+        for (int i = 0; i < sections.Length; i++)
+        {
+            sections[i].SetActive(i == 0); // solo activa la posición 0 (SectionPpl)
+        }
     }
 
-    /// <summary>
-    /// Llamar desde el botón "Siguiente" de cada sección.
-    /// </summary>
+    // Función que se llama al presionar el botón "Next" o "Iniciar tour"
     public void GoToNextSection()
     {
-        // 1) Limpiar AR de la sección actual
-        foreach (Transform child in placedObjectsContainer)
-            Destroy(child.gameObject);
-
-        // 2) Ocultar Canvas actual
-        sectionCanvases[currentSectionIndex].SetActive(false);
-
-        // 3) Avanzar índice
-        currentSectionIndex++;
-
-        // 4) Si queda una sección válida, mostrar; si no, opcional “Fin”
-        if (currentSectionIndex < sectionCanvases.Length)
+        if (currentSectionIndex < sections.Length - 1)
         {
-            sectionCanvases[currentSectionIndex].SetActive(true);
+            // Desactiva la sección actual
+            sections[currentSectionIndex].SetActive(false);
+
+            // Avanza el índice a la siguiente sección
+            currentSectionIndex++;
+
+            // Activa la siguiente sección
+            sections[currentSectionIndex].SetActive(true);
         }
-        else
+    }
+
+
+    public void GoToPreviousSection()
+    {
+        if (currentSectionIndex > 0)
         {
-            Debug.Log("¡Tour terminado!");
-            // Aquí podrías volver al inicio o cerrar la app
+            sections[currentSectionIndex].SetActive(false);
+            currentSectionIndex--;
+            sections[currentSectionIndex].SetActive(true);
         }
     }
 }
+
+
+//ESTO VA UNO POR UNO, ENTONCES SI ME VUELO UN BOTON YA LA EMBARRO PORQUE VA ESPECIFICAMENTE UNO POR UNO

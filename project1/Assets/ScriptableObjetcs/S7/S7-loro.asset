@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9404d1aa93077b94db3fa20dde9d3a6c, type: 3}
+  m_Name: S7-loro
+  m_EditorClassIdentifier: 
+  animalName: LORO
+  description: "Los Malib\xFAes representaron al loro en sus esculturas como un animal
+    asociado a la voz, la memoria colectiva y la transmisi\xF3n oral de saberes.
+    Su figura refleja el papel fundamental que jugaban las aves en la vida cotidiana
+    y espiritual de este pueblo, donde el loro pudo simbolizar la conexi\xF3n entre
+    los humanos y el mundo invisible"
+  prefab: {fileID: 859511773877226388, guid: 6da58c592159ece46861678afea093bb, type: 3}

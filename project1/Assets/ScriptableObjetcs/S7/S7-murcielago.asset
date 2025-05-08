@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9404d1aa93077b94db3fa20dde9d3a6c, type: 3}
+  m_Name: S7-murcielago
+  m_EditorClassIdentifier: 
+  animalName: "MURCI\xC9LAGO"
+  description: "Para la civilizaci\xF3n Malib\xFA el murci\xE9lago pudo haber simbolizado
+    la conexi\xF3n con el mundo espiritual y la transformaci\xF3n. Su representaci\xF3n
+    en esculturas refleja la importancia de este animal en su cosmovisi\xF3n, posiblemente
+    asociado a la noche, la muerte y el renacimiento."
+  prefab: {fileID: 3467927258254364942, guid: 5660a646d45bdd14b9e1fdd859f9c328, type: 3}

@@ -13,21 +13,9 @@ MonoBehaviour:
   m_Name: S7-IBIS
   m_EditorClassIdentifier: 
   animalName: IBIS
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-    nec odio. Praesent libero. Sed cursus ante dapibus diam.
-
-
-    Sed nisi. Nulla
-    quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-
-
-    Fusce
-    nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-    nulla.
-
-
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-    per inceptos himenaeos. Curabitur sodales ligula in libero.
-
-'
+  description: "La civilizaci\xF3n Malib\xFA, activa entre hace 800 y 400 a\xF1os
+    en el norte de Colombia, represent\xF3 al ibis en sus esculturas zoomorfas como
+    s\xEDmbolo de sabidur\xEDa y espiritualidad. Esta figura refleja su conexi\xF3n
+    con la naturaleza y el valor simb\xF3lico que otorgaban a los animales en su
+    cosmovisi\xF3n."
   prefab: {fileID: 43771274077343768, guid: 0488757d8b669d641b63e5f11f61e8f1, type: 3}

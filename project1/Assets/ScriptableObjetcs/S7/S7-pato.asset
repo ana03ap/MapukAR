@@ -13,19 +13,8 @@ MonoBehaviour:
   m_Name: S7-pato
   m_EditorClassIdentifier: 
   animalName: PATO CUCHARA
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-    nec odio. Praesent libero. Sed cursus ante dapibus diam.
-
-
-    Sed nisi. Nulla
-    quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-
-
-    Fusce
-    nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-    nulla.
-
-
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-    per inceptos himenaeos. Curabitur sodales ligula in libero.'
+  description: "El pato cuchara pudo haber simbolizado la adaptabilidad y la conexi\xF3n
+    con los ecosistemas acu\xE1ticos. Esta ave, reconocida por su distintivo pico
+    ancho, habr\xEDa sido valorada por los Malib\xFA no solo por su papel en el entorno
+    natural, sino tambi\xE9n por su posible significado espiritual."
   prefab: {fileID: 4003273658511207539, guid: f557c51b42f25014c843408d1f65da13, type: 3}

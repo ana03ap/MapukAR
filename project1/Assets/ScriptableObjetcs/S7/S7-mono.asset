@@ -13,19 +13,8 @@ MonoBehaviour:
   m_Name: S7-mono
   m_EditorClassIdentifier: 
   animalName: MONO AULLADOR
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-    nec odio. Praesent libero. Sed cursus ante dapibus diam.
-
-
-    Sed nisi. Nulla
-    quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.
-
-
-    Fusce
-    nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget
-    nulla.
-
-
-    Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-    per inceptos himenaeos. Curabitur sodales ligula in libero.'
+  description: "Los Malib\xFA representaron al mono en sus esculturas como s\xEDmbolo
+    de agilidad, inteligencia y conexi\xF3n con lo sagrado. Estas figuras reflejan
+    su observaci\xF3n de la naturaleza y la importancia espiritual que otorgaban
+    a los animales en su cosmovisi\xF3n."
   prefab: {fileID: 133199422429870118, guid: 34e12391f058fe844b107e1e843ce36c, type: 3}

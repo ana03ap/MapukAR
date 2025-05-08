@@ -13,5 +13,9 @@ MonoBehaviour:
   m_Name: S7-Paujil
   m_EditorClassIdentifier: 
   animalName: Paujil
-  description: asdhaskjdhaskjdhakjsdh
+  description: "El paujil pudo haber simbolizado la fertilidad y la conexi\xF3n con
+    los bosques h\xFAmedos que constitu\xEDan su entorno vital. Esta ave, reconocida
+    por su comportamiento territorial y su papel en la dispersi\xF3n de semillas,
+    habr\xEDa sido valorada por los Malib\xFAes por significado espiritual dentro
+    de su cosmovisi\xF3n."
   prefab: {fileID: 2736474016934421893, guid: fe0eab145c7cc2f468f537a8e84fe2ac, type: 3}

@@ -10,22 +10,22 @@ public class SectionFlowManager : MonoBehaviour
         // Al iniciar la app, desactiva todas las secciones excepto la primera (SectionPpl)
         for (int i = 0; i < sections.Length; i++)
         {
-            sections[i].SetActive(i == 0); // solo activa la posición 0 (SectionPpl)
+            sections[i].SetActive(i == 0); // solo activa la posiciï¿½n 0 (SectionPpl)
         }
     }
 
-    // Función que se llama al presionar el botón "Next" o "Iniciar tour"
+    // Funciï¿½n que se llama al presionar el botï¿½n "Next" o "Iniciar tour"
     public void GoToNextSection()
     {
         if (currentSectionIndex < sections.Length - 1)
         {
-            // Desactiva la sección actual
+            // Desactiva la secciï¿½n actual
             sections[currentSectionIndex].SetActive(false);
 
-            // Avanza el índice a la siguiente sección
+            // Avanza el ï¿½ndice a la siguiente secciï¿½n
             currentSectionIndex++;
 
-            // Activa la siguiente sección
+            // Activa la siguiente secciï¿½n
             sections[currentSectionIndex].SetActive(true);
         }
     }

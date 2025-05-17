@@ -35,11 +35,29 @@ public class SectionFlowManager : MonoBehaviour
     {
         if (currentSectionIndex > 0)
         {
+            // Apaga sección actual
             sections[currentSectionIndex].SetActive(false);
             currentSectionIndex--;
-            sections[currentSectionIndex].SetActive(true);
+
+            // Activa sección anterior
+            GameObject previousSection = sections[currentSectionIndex];
+            previousSection.SetActive(true);
+
+            // Apaga todos los canvas hijos
+            Canvas[] canvases = previousSection.GetComponentsInChildren<Canvas>(true);
+            foreach (Canvas canvas in canvases)
+            {
+                canvas.gameObject.SetActive(false);
+            }
+
+            // Activa solo el primer canvas
+            if (canvases.Length > 0)
+            {
+                canvases[0].gameObject.SetActive(true);
+            }
         }
     }
+
 }
 
 

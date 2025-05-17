@@ -1305,7 +1305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &133930130
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,6 +1578,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1888867487}
         m_TargetAssemblyTypeName: SectionFlowManager, Assembly-CSharp
         m_MethodName: GoToNextSection
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 91423521}
+        m_TargetAssemblyTypeName: ARInteractionsManager, Assembly-CSharp
+        m_MethodName: ClearPlacedObjects
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2349,7 +2361,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -2811,7 +2823,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -3430,12 +3442,14 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1194859788}
+  - {fileID: 908319775}
+  - {fileID: 1519698792}
   m_Father: {fileID: 1552997355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 466.06973, y: 82.91135}
-  m_SizeDelta: {x: 801.7083, y: 469.9797}
+  m_AnchoredPosition: {x: 466.06973, y: -26}
+  m_SizeDelta: {x: 801.7083, y: 584.5231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &422240330
 GameObject:
@@ -3471,8 +3485,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -590.42377, y: -479.8576}
-  m_SizeDelta: {x: 469.7816, y: 63.2684}
+  m_AnchoredPosition: {x: -530.45703, y: -479.8576}
+  m_SizeDelta: {x: 589.7151, y: 63.2684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422240332
 MonoBehaviour:
@@ -3557,7 +3571,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -13.953613, z: 0, w: 0}
+  m_margin: {x: 0, y: 0.32418063, z: 0.951889, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5014,7 +5028,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -5383,7 +5397,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -6036,6 +6050,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612088760}
   m_CullTransparentMesh: 1
+--- !u!1 &626598270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 626598271}
+  m_Layer: 0
+  m_Name: AuxSec7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &626598271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626598270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1130.1572, y: 466.55795, z: -2.5943067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1068038326}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &638486880
 GameObject:
   m_ObjectHideFlags: 0
@@ -7322,7 +7368,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -7819,6 +7865,140 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &908319774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 908319775}
+  - component: {fileID: 908319777}
+  - component: {fileID: 908319776}
+  m_Layer: 0
+  m_Name: SabiasQueText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &908319775
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908319774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 412854741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -250, y: 238}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &908319776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908319774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "\xBFSab\xEDas que\u2026?"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 44
+  m_fontSizeBase: 44
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -240.83475, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &908319777
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 908319774}
+  m_CullTransparentMesh: 1
 --- !u!1 &912567106
 GameObject:
   m_ObjectHideFlags: 0
@@ -8500,10 +8680,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1951642693}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -2.3969, y: -198.40857}
-  m_SizeDelta: {x: 1015.7061, y: 131.5728}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1001051599
 MonoBehaviour:
@@ -8525,7 +8705,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cb846daf769f61c43a0ca38164de3ce0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c8cabbeb47bd264c948208d5f7906c7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8709,6 +8889,66 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061115765}
   m_CullTransparentMesh: 1
+--- !u!1 &1068038325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1068038326}
+  - component: {fileID: 1068038327}
+  m_Layer: 0
+  m_Name: AnimalDisplayController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1068038326
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068038325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 626598271}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1068038327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068038325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aca6babf5dd7db8428368a9191b6d769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuCanvas: {fileID: 1660044452}
+  animalCanvas: {fileID: 1171319656}
+  animalCanvasGroup: {fileID: 1171319659}
+  animals:
+  - {fileID: 11400000, guid: c9b26a87f47fc8748a93fef8f4d72f4d, type: 2}
+  - {fileID: 11400000, guid: ad9a274685861bc43b874773d23930d6, type: 2}
+  - {fileID: 11400000, guid: 912a0e50847794249abc29c84dec2fc6, type: 2}
+  - {fileID: 11400000, guid: 4281aeda23da08e4bb0ab4235aaa69df, type: 2}
+  - {fileID: 11400000, guid: f89536f6c1fc1564b9d11b7b6c96c563, type: 2}
+  - {fileID: 11400000, guid: 4e05f2a64ee42a445be596055d0a420a, type: 2}
+  - {fileID: 11400000, guid: 2322fb64871d5d04c9c6d8dcef95cf44, type: 2}
+  - {fileID: 11400000, guid: 1cffb5f8e6e9be54dba0a7bcb2fe1110, type: 2}
+  - {fileID: 11400000, guid: b092fed80015d1b46a7db9200b01921d, type: 2}
+  titleText: {fileID: 494624476}
+  descriptionText: {fileID: 1246388835}
+  btnBack: {fileID: 1953206518}
 --- !u!1 &1076427532
 GameObject:
   m_ObjectHideFlags: 0
@@ -9509,7 +9749,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -9647,7 +9887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1171319657}
-  - component: {fileID: 1171319658}
+  - component: {fileID: 1171319659}
   m_Layer: 0
   m_Name: AnimalCanvas
   m_TagString: Untagged
@@ -9671,34 +9911,18 @@ Transform:
   - {fileID: 1552997355}
   m_Father: {fileID: 1654855700}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1171319658
-MonoBehaviour:
+--- !u!225 &1171319659
+CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1171319656}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aca6babf5dd7db8428368a9191b6d769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainMenuCanvas: {fileID: 1660044452}
-  animalCanvas: {fileID: 1171319656}
-  animals:
-  - {fileID: 11400000, guid: c9b26a87f47fc8748a93fef8f4d72f4d, type: 2}
-  - {fileID: 11400000, guid: ad9a274685861bc43b874773d23930d6, type: 2}
-  - {fileID: 11400000, guid: 912a0e50847794249abc29c84dec2fc6, type: 2}
-  - {fileID: 11400000, guid: 4281aeda23da08e4bb0ab4235aaa69df, type: 2}
-  - {fileID: 11400000, guid: f89536f6c1fc1564b9d11b7b6c96c563, type: 2}
-  - {fileID: 11400000, guid: 4e05f2a64ee42a445be596055d0a420a, type: 2}
-  - {fileID: 11400000, guid: 2322fb64871d5d04c9c6d8dcef95cf44, type: 2}
-  - {fileID: 11400000, guid: 1cffb5f8e6e9be54dba0a7bcb2fe1110, type: 2}
-  - {fileID: 11400000, guid: b092fed80015d1b46a7db9200b01921d, type: 2}
-  titleText: {fileID: 494624476}
-  descriptionText: {fileID: 1246388835}
-  btnBack: {fileID: 1953206518}
-  spawnContainer: {fileID: 1585285120}
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1188202751
 GameObject:
   m_ObjectHideFlags: 0
@@ -9987,7 +10211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1194859789
@@ -10003,14 +10227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49803925, g: 0.49803925, b: 0.49803925, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e90e3d35c6ab1fe4db0044e1b14957d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10558,7 +10782,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -384.00046, y: -215.83224, z: -129.37888, w: -111.78407}
+  m_margin: {x: -384.00046, y: -151.71248, z: -129.37888, w: -217.25877}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10588,7 +10812,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 494.99997, y: 34.00001}
+  m_AnchoredPosition: {x: 494.99997, y: -14}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: -0.00000011920929, y: 0.5}
 --- !u!1 &1260692343
@@ -11907,7 +12131,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -13221,6 +13445,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512890142}
   m_CullTransparentMesh: 1
+--- !u!1 &1519698791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519698792}
+  - component: {fileID: 1519698794}
+  - component: {fileID: 1519698793}
+  m_Layer: 0
+  m_Name: SideBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1519698792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519698791}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 412854741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -388.87402, y: -5.7481}
+  m_SizeDelta: {x: 28.885, y: 404.8685}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1519698793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519698791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8584906, g: 0.5379514, b: 0.14983091, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1519698794
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519698791}
+  m_CullTransparentMesh: 1
 --- !u!1 &1537701800
 GameObject:
   m_ObjectHideFlags: 0
@@ -14459,7 +14758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654855700
 Transform:
   m_ObjectHideFlags: 0
@@ -14824,7 +15123,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -18162,7 +18461,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: HideAnimal
         m_Mode: 1
@@ -18752,7 +19051,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1171319658}
+      - m_Target: {fileID: 1068038327}
         m_TargetAssemblyTypeName: AnimalDisplayController, Assembly-CSharp
         m_MethodName: ShowAnimal
         m_Mode: 3
@@ -19352,3 +19651,4 @@ SceneRoots:
   - {fileID: 1706388506}
   - {fileID: 1888867488}
   - {fileID: 1347405334}
+  - {fileID: 626598271}

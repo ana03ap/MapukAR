@@ -11,14 +11,26 @@ public class S4CanvasController : MonoBehaviour
     public GameObject bookPrefab;
     private GameObject spawnedBook;
 
-    void Start()
+    //void OnEnable()
+    //{
+    //    // Mostrar solo el Canvas1
+    //    canvas1.SetActive(true);
+    //    canvas2.SetActive(false);
+
+    //    // Instanciar el libro frente a la cámara
+    //    SpawnBook();
+    //}
+
+
+    void OnEnable()
     {
-        // Mostrar solo el Canvas1
         canvas1.SetActive(true);
         canvas2.SetActive(false);
 
-        // Instanciar el libro frente a la cámara
-        SpawnBook();
+        if (spawnedBook == null)
+        {
+            SpawnBook();
+        }
     }
 
     void SpawnBook()

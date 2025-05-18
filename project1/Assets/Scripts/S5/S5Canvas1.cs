@@ -19,7 +19,7 @@ public class S5Canvas1 : MonoBehaviour
     public void ShowMegalania()
     {
         var cam = Camera.main.transform;
-        Vector3 spawnPos = cam.position + cam.forward * 0.5f;
+        Vector3 spawnPos = cam.position + cam.forward * 0.7f;
 
         Instantiate(
             megalaniaPrefab,

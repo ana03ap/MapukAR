@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: Zenues
+  m_EditorClassIdentifier: 
+  m_GuidLow: 4738202465128732289
+  m_GuidHigh: 5539404296939006602
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4834553854156288126
+      m_GuidHigh: 2582530585940926872
+    m_SerializedTextureGuid:
+      m_GuidLow: 18323203217561103854
+      m_GuidHigh: 1472874245100576538
+    m_Size: {x: 1, y: 0.72609097}
+    m_SpecifySize: 1
+    m_Name: rodillo
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4828050078184693821
+      m_GuidHigh: 9905907628588717975
+    m_SerializedTextureGuid:
+      m_GuidLow: 1071465606284332137
+      m_GuidHigh: 1180423983637477208
+    m_Size: {x: 0.5, y: 0.48473284}
+    m_SpecifySize: 1
+    m_Name: Plato
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5143042600935766168
+      m_GuidHigh: 14991091718230970265
+    m_SerializedTextureGuid:
+      m_GuidLow: 10916478747172489203
+      m_GuidHigh: 15041090826986423627
+    m_Size: {x: 1.912037, y: 1}
+    m_SpecifySize: 1
+    m_Name: PiezaOro
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5182227316952345200
+      m_GuidHigh: 2421328903621097874
+    m_SerializedTextureGuid:
+      m_GuidLow: 7367607867936569036
+      m_GuidHigh: 11424589744844721546
+    m_Size: {x: 0.5, y: 0.4566787}
+    m_SpecifySize: 1
+    m_Name: "Mu\xF1eco"
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5613204789280572702
+      m_GuidHigh: 369134394237561275
+    m_SerializedTextureGuid:
+      m_GuidLow: 2473181857307459914
+      m_GuidHigh: 4260064512863957259
+    m_Size: {x: 1, y: 0.8050761}
+    m_SpecifySize: 1
+    m_Name: Pendiente
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4711047912276888203
+      m_GuidHigh: 2464913091166608266
+    m_SerializedTextureGuid:
+      m_GuidLow: 11390024729523442605
+      m_GuidHigh: 8422748357376056136
+    m_Size: {x: 2.3988972, y: 1.5}
+    m_SpecifySize: 1
+    m_Name: Copa
+    m_Texture: {fileID: 0}

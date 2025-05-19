@@ -11,6 +11,8 @@ public class S2UIManager : MonoBehaviour
     [SerializeField] private GameObject itemsMenuCanvas;
     [SerializeField] private GameObject ARPositionCanvas;
 
+    [SerializeField] private GameObject instructionPanel; // NUEVO
+
     void OnEnable()
     {
         GameManager.instance.OnMainppl += ActivateMainPPL;
@@ -26,6 +28,10 @@ public class S2UIManager : MonoBehaviour
         mainMenuCanvas.SetActive(false);
         itemsMenuCanvas.SetActive(false);
         ARPositionCanvas.SetActive(false);
+
+
+        instructionPanel.SetActive(false);
+
     }
 
     private void ActivateMainPPL()
@@ -56,6 +62,8 @@ public class S2UIManager : MonoBehaviour
 
         mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
+        mainMenuCanvas.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);//NUEVO PARA INTRUCCIONES
+
 
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
@@ -93,7 +101,7 @@ public class S2UIManager : MonoBehaviour
 
         ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        
+
 
         // Asegurar otros elementos desactivados
         ResetCanvas(mainPPL);
@@ -132,6 +140,22 @@ public class S2UIManager : MonoBehaviour
             );
         }
     }
+
+
+
+    // NUEVOS MÉTODOS para las instrucciones
+    public void ShowInstructions()
+{
+    instructionPanel.SetActive(true);
+    instructionPanel.transform.localScale = Vector3.one; // 
+}
+
+public void HideInstructions()
+{
+    instructionPanel.SetActive(false);
+    instructionPanel.transform.localScale = Vector3.zero; // 
+}
+
 }
 
 

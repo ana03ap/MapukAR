@@ -9,8 +9,7 @@ public class GrowImageOnClick : MonoBehaviour
     public int totalTaps = 15;
     public float animationDuration = 0.3f;
 
-    public GameObject canvasToHide;
-    public GameObject canvasToShow;
+    public Button finalButton; // 👉 Botón a mostrar al final
 
     private int currentTaps = 0;
     private Vector3 originalScale;
@@ -21,7 +20,7 @@ public class GrowImageOnClick : MonoBehaviour
         if (targetImage != null)
             originalScale = targetImage.rectTransform.localScale;
 
-        ResetGame(); // Asegura el inicio en estado limpio
+        ResetGame(); // Inicia en estado limpio
     }
 
     public void OnButtonClick()
@@ -41,16 +40,9 @@ public class GrowImageOnClick : MonoBehaviour
         if (progressBar != null)
             progressBar.value = currentTaps;
 
-        if (currentTaps >= totalTaps)
+        if (currentTaps >= totalTaps && finalButton != null)
         {
-            // 🔁 Reiniciar antes de cambiar el canvas
-            ResetGame();
-
-            if (canvasToHide != null)
-                canvasToHide.SetActive(false);
-
-            if (canvasToShow != null)
-                canvasToShow.SetActive(true);
+            finalButton.gameObject.SetActive(true); // ✅ Mostrar botón final
         }
     }
 
@@ -84,10 +76,7 @@ public class GrowImageOnClick : MonoBehaviour
             progressBar.value = 0;
         }
 
-        if (canvasToHide != null)
-            canvasToHide.SetActive(true);
-
-        if (canvasToShow != null)
-            canvasToShow.SetActive(false);
+        if (finalButton != null)
+            finalButton.gameObject.SetActive(false); // Ocultar al inicio
     }
 }

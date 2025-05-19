@@ -163,7 +163,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.MapukAR
-    Standalone: com.DefaultCompany.MapukAR
+    Standalone: com.DefaultCompany.Mapuk-AR
   buildNumber:
     Standalone: 0
     VisionOS: 0

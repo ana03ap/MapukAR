@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     public GameObject modelo3D;       // Canvas1 (activará el modelo 3D)
     public GameObject popupFinal;     // Panel de información (opcional)
 
+
+    public DragPiece[] piezas; // asígnalas desde el inspector (las 4 piezas del rompecabezas)
+
     private HashSet<string> piezasColocadas = new HashSet<string>();
 
     private void Awake()
@@ -27,6 +30,15 @@ public class GameController : MonoBehaviour
 
         if (piezasColocadas.Count == 4)
         {
+            // Resetear piezas antes de cambiar de canvas
+            foreach (DragPiece pieza in piezas)
+            {
+                pieza.ResetPiece();
+            }
+
+            piezasColocadas.Clear(); // por si vuelves a hacer el juego
+
+
             actual.SetActive(false);
             if (modelo3D != null) modelo3D.SetActive(true);
             if (popupFinal != null) popupFinal.SetActive(true);

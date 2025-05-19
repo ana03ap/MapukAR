@@ -11,7 +11,7 @@ public class S2UIManager : MonoBehaviour
     [SerializeField] private GameObject itemsMenuCanvas;
     [SerializeField] private GameObject ARPositionCanvas;
 
-    void Start()
+    void OnEnable()
     {
         GameManager.instance.OnMainppl += ActivateMainPPL;
         GameManager.instance.OnMainMenu += ActivateMainMenu;
@@ -40,20 +40,7 @@ public class S2UIManager : MonoBehaviour
         mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
 
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
-        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
 
-        //mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-
-        //itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
-        //itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-        //ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
         ResetCanvas(mainMenuCanvas);
         ResetCanvas(itemsMenuCanvas);
@@ -62,9 +49,6 @@ public class S2UIManager : MonoBehaviour
 
     private void ActivateMainMenu()
     {
-        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
 
         ResetAllCanvases();
         mainMenuCanvas.SetActive(true);
@@ -75,12 +59,6 @@ public class S2UIManager : MonoBehaviour
 
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
-        //itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.5f);
-        //itemsMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-        //ARPositionCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
 
         // Asegurar que mainPPL está desactivado y en escala cero
@@ -94,14 +72,6 @@ public class S2UIManager : MonoBehaviour
 
         ResetAllCanvases();
         itemsMenuCanvas.SetActive(true);
-
-        //mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-
-
-        //mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
-        //mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(0, 0, 0), 0.3f);
 
 
         itemsMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.5f);

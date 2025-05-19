@@ -14,7 +14,15 @@ public class DragPiece: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        originalPosition = transform.position; // 
     }
+
+    public void ResetPiece()
+    {
+        rectTransform.SetParent(GameController.Instance.actual.transform); // Volver al padre original
+        rectTransform.position = originalPosition;
+    }
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {

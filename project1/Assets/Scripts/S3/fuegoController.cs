@@ -4,10 +4,13 @@ using System.Collections;
 
 public class GrowImageOnClick : MonoBehaviour
 {
-    public Image targetImage;     // Imagen a escalar (sprite)
-    public Slider progressBar;    // Barra de progreso
-    public int totalTaps = 15;    // Número de taps para llegar al tamaño máximo
+    public Image targetImage;           // Imagen a escalar (sprite)
+    public Slider progressBar;          // Barra de progreso
+    public int totalTaps = 15;          // Número de taps para llegar al tamaño máximo
     public float animationDuration = 0.3f; // Duración del crecimiento por clic
+
+    public GameObject canvasToHide;     // GameObject del canvas a ocultar
+    public GameObject canvasToShow;     // GameObject del canvas a mostrar
 
     private int currentTaps = 0;
     private Vector3 originalScale;
@@ -24,6 +27,13 @@ public class GrowImageOnClick : MonoBehaviour
             progressBar.maxValue = totalTaps;
             progressBar.value = 0;
         }
+
+        // Mostrar solo el canvas inicial
+        if (canvasToHide != null)
+            canvasToHide.SetActive(true);
+
+        if (canvasToShow != null)
+            canvasToShow.SetActive(false);
     }
 
     public void OnButtonClick()
@@ -46,6 +56,16 @@ public class GrowImageOnClick : MonoBehaviour
         // Actualizar barra de progreso
         if (progressBar != null)
             progressBar.value = currentTaps;
+
+        // Si se ha alcanzado el total de taps, cambiar de canvas
+        if (currentTaps >= totalTaps)
+        {
+            if (canvasToHide != null)
+                canvasToHide.SetActive(false);
+
+            if (canvasToShow != null)
+                canvasToShow.SetActive(true);
+        }
     }
 
     private IEnumerator AnimateScale(Vector3 targetScale)

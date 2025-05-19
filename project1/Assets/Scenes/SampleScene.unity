@@ -4554,7 +4554,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &423245098
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14625,7 +14625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1438901777
 Transform:
   m_ObjectHideFlags: 0
@@ -15790,7 +15790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1537701801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21845,9 +21845,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1888867487}
-        m_TargetAssemblyTypeName: SectionFlowManager, Assembly-CSharp
-        m_MethodName: GoToNextSection
+      - m_Target: {fileID: 36812272}
+        m_TargetAssemblyTypeName: CanvasFlowManager, Assembly-CSharp
+        m_MethodName: GoToNextCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22358,6 +22358,8 @@ MonoBehaviour:
   progressBar: {fileID: 1215709410}
   totalTaps: 15
   animationDuration: 0.3
+  canvasToHide: {fileID: 726879835}
+  canvasToShow: {fileID: 536256440}
 --- !u!1 &2145999720
 GameObject:
   m_ObjectHideFlags: 0

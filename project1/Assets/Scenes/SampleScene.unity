@@ -8193,6 +8193,15 @@ MonoBehaviour:
   canvasActual: {fileID: 423245099}
   canvasNuevo: {fileID: 963210456}
   contadorText: {fileID: 459075775}
+  fragmentButtons:
+  - {fileID: 462340968}
+  - {fileID: 1492666833}
+  - {fileID: 1226978352}
+  - {fileID: 451632414}
+  - {fileID: 1788163092}
+  - {fileID: 372309868}
+  - {fileID: 123373601}
+  - {fileID: 1226513428}
 --- !u!224 &786156200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22190,9 +22199,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1888867487}
-        m_TargetAssemblyTypeName: SectionFlowManager, Assembly-CSharp
-        m_MethodName: GoToNextSection
+      - m_Target: {fileID: 36812272}
+        m_TargetAssemblyTypeName: CanvasFlowManager, Assembly-CSharp
+        m_MethodName: GoToNextCanvas
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

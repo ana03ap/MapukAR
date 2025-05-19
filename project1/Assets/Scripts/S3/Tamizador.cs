@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class ButtonHandler : MonoBehaviour
 {
@@ -7,19 +8,16 @@ public class ButtonHandler : MonoBehaviour
     public Button tamizadorButton;
     public Slider progressBar;
 
-    public Canvas canvasActual;  // El canvas donde están los botones
-    public Canvas canvasNuevo;   // El canvas que quieres mostrar después
+    public Canvas canvasActual;
+    public Canvas canvasNuevo;
 
     private int clickCount = 0;
     private int maxClicks = 5;
 
     void Start()
     {
-        particulas.SetActive(false);
+        ResetGame(); // Asegura un inicio limpio
         tamizadorButton.onClick.AddListener(OnTamizadorClicked);
-        progressBar.value = 0f;
-
-        canvasNuevo.gameObject.SetActive(false); // Asegúrate de que el nuevo canvas esté oculto al inicio
     }
 
     void OnTamizadorClicked()
@@ -27,7 +25,7 @@ public class ButtonHandler : MonoBehaviour
         StartCoroutine(ShowParticlesTemporarily());
     }
 
-    System.Collections.IEnumerator ShowParticlesTemporarily()
+    IEnumerator ShowParticlesTemporarily()
     {
         particulas.SetActive(true);
 
@@ -36,13 +34,32 @@ public class ButtonHandler : MonoBehaviour
         particulas.SetActive(false);
 
         clickCount++;
-
         progressBar.value = (float)clickCount / maxClicks;
 
         if (clickCount >= maxClicks)
         {
-            canvasActual.gameObject.SetActive(false); // Oculta el Canvas actual
-            canvasNuevo.gameObject.SetActive(true);   // Muestra el nuevo Canvas
+            // Llamamos a la rutina que reinicia y luego cambia canvas
+            StartCoroutine(SwitchCanvasAfterDelay(1f));
         }
+    }
+
+    IEnumerator SwitchCanvasAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        ResetGame(); // ✅ Reiniciar antes de desactivar canvas
+
+        canvasActual.gameObject.SetActive(false);
+        canvasNuevo.gameObject.SetActive(true);
+    }
+
+    void ResetGame()
+    {
+        clickCount = 0;
+        progressBar.value = 0f;
+        particulas.SetActive(false);
+
+        canvasNuevo.gameObject.SetActive(false);
+        canvasActual.gameObject.SetActive(true);
     }
 }

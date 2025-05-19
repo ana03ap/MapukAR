@@ -4,13 +4,13 @@ using System.Collections;
 
 public class GrowImageOnClick : MonoBehaviour
 {
-    public Image targetImage;           // Imagen a escalar (sprite)
-    public Slider progressBar;          // Barra de progreso
-    public int totalTaps = 15;          // Número de taps para llegar al tamaño máximo
-    public float animationDuration = 0.3f; // Duración del crecimiento por clic
+    public Image targetImage;
+    public Slider progressBar;
+    public int totalTaps = 15;
+    public float animationDuration = 0.3f;
 
-    public GameObject canvasToHide;     // GameObject del canvas a ocultar
-    public GameObject canvasToShow;     // GameObject del canvas a mostrar
+    public GameObject canvasToHide;
+    public GameObject canvasToShow;
 
     private int currentTaps = 0;
     private Vector3 originalScale;
@@ -21,19 +21,7 @@ public class GrowImageOnClick : MonoBehaviour
         if (targetImage != null)
             originalScale = targetImage.rectTransform.localScale;
 
-        if (progressBar != null)
-        {
-            progressBar.minValue = 0;
-            progressBar.maxValue = totalTaps;
-            progressBar.value = 0;
-        }
-
-        // Mostrar solo el canvas inicial
-        if (canvasToHide != null)
-            canvasToHide.SetActive(true);
-
-        if (canvasToShow != null)
-            canvasToShow.SetActive(false);
+        ResetGame(); // Asegura el inicio en estado limpio
     }
 
     public void OnButtonClick()
@@ -42,24 +30,22 @@ public class GrowImageOnClick : MonoBehaviour
 
         currentTaps++;
 
-        // Calcular nuevo tamaño destino
-        float scaleFactor = 1f + (0.5f * currentTaps / totalTaps); // crece hasta 1.5x
+        float scaleFactor = 1f + (0.5f * currentTaps / totalTaps);
         Vector3 targetScale = originalScale * scaleFactor;
 
-        // Cancelar animación anterior si está corriendo
         if (scaleCoroutine != null)
             StopCoroutine(scaleCoroutine);
 
-        // Iniciar nueva animación
         scaleCoroutine = StartCoroutine(AnimateScale(targetScale));
 
-        // Actualizar barra de progreso
         if (progressBar != null)
             progressBar.value = currentTaps;
 
-        // Si se ha alcanzado el total de taps, cambiar de canvas
         if (currentTaps >= totalTaps)
         {
+            // 🔁 Reiniciar antes de cambiar el canvas
+            ResetGame();
+
             if (canvasToHide != null)
                 canvasToHide.SetActive(false);
 
@@ -67,7 +53,7 @@ public class GrowImageOnClick : MonoBehaviour
                 canvasToShow.SetActive(true);
         }
     }
-//
+
     private IEnumerator AnimateScale(Vector3 targetScale)
     {
         Vector3 startScale = targetImage.rectTransform.localScale;
@@ -82,5 +68,26 @@ public class GrowImageOnClick : MonoBehaviour
         }
 
         targetImage.rectTransform.localScale = targetScale;
+    }
+
+    public void ResetGame()
+    {
+        currentTaps = 0;
+
+        if (targetImage != null)
+            targetImage.rectTransform.localScale = originalScale;
+
+        if (progressBar != null)
+        {
+            progressBar.minValue = 0;
+            progressBar.maxValue = totalTaps;
+            progressBar.value = 0;
+        }
+
+        if (canvasToHide != null)
+            canvasToHide.SetActive(true);
+
+        if (canvasToShow != null)
+            canvasToShow.SetActive(false);
     }
 }

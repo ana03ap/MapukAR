@@ -19,15 +19,7 @@ public class ColoringGame : MonoBehaviour
 
     void Start()
     {
-        paintTexture = new Texture2D(sourceTexture.width, sourceTexture.height);
-        paintTexture.SetPixels(sourceTexture.GetPixels());
-        paintTexture.Apply();
-        paintingArea.texture = paintTexture;
-
-        if (finalImage != null)
-        {
-            finalImage.gameObject.SetActive(false);
-        }
+        ResetGame(); // Inicializa correctamente
     }
 
     void Update()
@@ -134,10 +126,38 @@ public class ColoringGame : MonoBehaviour
                 yield return null;
             }
 
-            yield return new WaitForSeconds(1f); // espera 1 segundo después de mostrar la imagen
+            yield return new WaitForSeconds(1f);
         }
+
+        ResetGame(); // 🔁 Primero reiniciamos para evitar modificar elementos desactivados
 
         if (currentCanvas != null) currentCanvas.gameObject.SetActive(false);
         if (nextCanvas != null) nextCanvas.gameObject.SetActive(true);
+    }
+
+    void ResetGame()
+    {
+        completed = false;
+
+        // Restaurar textura
+        paintTexture = new Texture2D(sourceTexture.width, sourceTexture.height);
+        paintTexture.SetPixels(sourceTexture.GetPixels());
+        paintTexture.Apply();
+        paintingArea.texture = paintTexture;
+
+        // Mostrar pintura, ocultar imagen final
+        if (paintingArea != null) paintingArea.gameObject.SetActive(true);
+        if (finalImage != null)
+        {
+            finalImage.gameObject.SetActive(false);
+            finalImage.rectTransform.localScale = Vector3.one;
+
+            var group = finalImage.GetComponent<CanvasGroup>();
+            if (group != null) group.alpha = 1;
+        }
+
+        // Canvas state inicial
+        if (nextCanvas != null) nextCanvas.gameObject.SetActive(false);
+        if (currentCanvas != null) currentCanvas.gameObject.SetActive(true);
     }
 }

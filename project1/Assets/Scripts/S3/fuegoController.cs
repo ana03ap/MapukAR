@@ -67,7 +67,7 @@ public class GrowImageOnClick : MonoBehaviour
                 canvasToShow.SetActive(true);
         }
     }
-
+//
     private IEnumerator AnimateScale(Vector3 targetScale)
     {
         Vector3 startScale = targetImage.rectTransform.localScale;

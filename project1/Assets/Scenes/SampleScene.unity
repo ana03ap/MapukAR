@@ -1776,7 +1776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &133930130
 Transform:
   m_ObjectHideFlags: 0
@@ -3969,7 +3969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &381566204
 Transform:
   m_ObjectHideFlags: 0
@@ -4119,7 +4119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &390670945
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4156,7 +4156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rawImage: {fileID: 805099101}
-  radius: 50
+  radius: 80
 --- !u!114 &390670947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10951,14 +10951,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4317179f34b805040ad1e951059dc808, type: 3}
   - {fileID: 21300000, guid: 8c06261a37fa17149826431c47a600dd, type: 3}
   - {fileID: 21300000, guid: c6e034ce54e43f24fb64ea01b9947c56, type: 3}
-  - {fileID: 21300000, guid: 36d0a594228cac94a8343708aaa8a597, type: 3}
-  - {fileID: 21300000, guid: c6e034ce54e43f24fb64ea01b9947c56, type: 3}
-  - {fileID: 21300000, guid: c6e034ce54e43f24fb64ea01b9947c56, type: 3}
+  - {fileID: 21300000, guid: 964896a1318a03341b408085b232ecb6, type: 3}
+  - {fileID: 21300000, guid: 31fa7c209d852b4499ba1d9f87a006dc, type: 3}
+  - {fileID: 21300000, guid: f5abe4cc23ee73244b3b687c30f4b124, type: 3}
   buttons:
   - {fileID: 1906021444}
   - {fileID: 985922129}
   - {fileID: 1590764342}
-  - {fileID: 0}
+  - {fileID: 1277571396}
+  - {fileID: 859226216}
+  - {fileID: 517633873}
 --- !u!1 &1135825928
 GameObject:
   m_ObjectHideFlags: 0
@@ -19450,7 +19452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1822046633
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21845,9 +21847,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36812272}
-        m_TargetAssemblyTypeName: CanvasFlowManager, Assembly-CSharp
-        m_MethodName: GoToNextCanvas
+      - m_Target: {fileID: 1888867487}
+        m_TargetAssemblyTypeName: SectionFlowManager, Assembly-CSharp
+        m_MethodName: GoToNextSection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

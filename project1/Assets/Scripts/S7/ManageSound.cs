@@ -1,61 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] private Image soundOnIcon;       // Ícono de sonido activado
-    [SerializeField] private Image soundOffIcon;      // Ícono de sonido apagado
-    [SerializeField] private AudioSource musicSource; // Fuente de audio para la música
+    [SerializeField] private Image soundOnIcon;
+    [SerializeField] private Image soundOffIcon;
+    [SerializeField] private AudioSource musicSource;
 
     private bool muted = false;
+    private bool hasBeenActivated = false;
 
     void Start()
     {
-        if (!PlayerPrefs.HasKey("muted"))
-        {
-            PlayerPrefs.SetInt("muted", 0);
-        }
+        // Al entrar a la escena, todo debe estar apagado
+        muted = false;
+        hasBeenActivated = false;
 
-        Load();            
-        ApplyMute();       
-        UpdateButtonIcon();
+        musicSource.Stop();
+        musicSource.mute = false;
+
+        HideIcons(); // Oculta ambos íconos
     }
 
-    // Botón grande para comenzar música
     public void OnStartButtonPressed()
     {
-        if (musicSource != null && !musicSource.isPlaying)
+        if (!hasBeenActivated)
         {
+            hasBeenActivated = true;
             musicSource.Play();
+            UpdateButtonIcon(); // Muestra el ícono correspondiente
         }
     }
 
-    // Botón para mutear/desmutear
     public void OnMuteButtonPressed()
     {
+        if (!hasBeenActivated) return;
+
         muted = !muted;
         ApplyMute();
-        Save();
         UpdateButtonIcon();
     }
 
-    // ✅ Botón Next: detener la música
     public void OnNextButtonPressed()
     {
-        if (musicSource != null && musicSource.isPlaying)
+        if (musicSource.isPlaying)
         {
-            musicSource.Stop();  // Detiene la música por completo
+            musicSource.Stop();
         }
+
+        // Reset completo de estado
+        muted = false;
+        hasBeenActivated = false;
+        musicSource.mute = false;
+
+        HideIcons();
     }
 
     private void ApplyMute()
     {
-        if (musicSource != null)
-        {
-            musicSource.mute = muted;
-        }
+        musicSource.mute = muted;
     }
 
     private void UpdateButtonIcon()
@@ -64,13 +67,9 @@ public class SoundManager : MonoBehaviour
         if (soundOffIcon != null) soundOffIcon.enabled = muted;
     }
 
-    private void Load()
+    private void HideIcons()
     {
-        muted = PlayerPrefs.GetInt("muted") == 1;
-    }
-
-    private void Save()
-    {
-        PlayerPrefs.SetInt("muted", muted ? 1 : 0);
+        if (soundOnIcon != null) soundOnIcon.enabled = false;
+        if (soundOffIcon != null) soundOffIcon.enabled = false;
     }
 }

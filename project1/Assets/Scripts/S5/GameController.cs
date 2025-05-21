@@ -28,7 +28,7 @@ public class GameController : MonoBehaviour
         if (!piezasColocadas.Contains(id))
             piezasColocadas.Add(id);
 
-        if (piezasColocadas.Count == 4)
+        if (piezasColocadas.Count == 6)
         {
             // Resetear piezas antes de cambiar de canvas
             foreach (DragPiece pieza in piezas)

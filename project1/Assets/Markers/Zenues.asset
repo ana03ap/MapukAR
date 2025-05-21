@@ -33,7 +33,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 1071465606284332137
       m_GuidHigh: 1180423983637477208
-    m_Size: {x: 0.5, y: 0.48473284}
+    m_Size: {x: 1, y: 0.75}
     m_SpecifySize: 1
     m_Name: Plato
     m_Texture: {fileID: 0}
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 2473181857307459914
       m_GuidHigh: 4260064512863957259
-    m_Size: {x: 1, y: 0.8050761}
+    m_Size: {x: 0.5, y: 0.40253806}
     m_SpecifySize: 1
     m_Name: Pendiente
     m_Texture: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 11390024729523442605
       m_GuidHigh: 8422748357376056136
-    m_Size: {x: 2.3988972, y: 1.5}
+    m_Size: {x: 2, y: 1.5}
     m_SpecifySize: 1
     m_Name: Copa
     m_Texture: {fileID: 0}

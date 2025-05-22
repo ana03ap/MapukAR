@@ -1,32 +1,36 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-public class DragPiece: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragPiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
-    private Vector3 originalPosition;
 
-    public string pieceID; // ejemplo: "cabeza", "alas", etc.
+    private Vector3 originalPosition;
+    private bool yaTienePosicionInicial = false;
+
+    public string pieceID; // ejemplo: "pieza1", "pieza2", etc.
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        originalPosition = transform.position; // 
     }
 
     public void ResetPiece()
     {
-        rectTransform.SetParent(GameController.Instance.actual.transform); // Volver al padre original
+        rectTransform.SetParent(GameController.Instance.actual.transform);
         rectTransform.position = originalPosition;
     }
 
-
     public void OnBeginDrag(PointerEventData eventData)
     {
-        originalPosition = rectTransform.position;
+        if (!yaTienePosicionInicial)
+        {
+            originalPosition = rectTransform.position;
+            yaTienePosicionInicial = true;
+        }
+
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -39,7 +43,6 @@ public class DragPiece: MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
     {
         canvasGroup.blocksRaycasts = true;
 
-        // Verificar si fue soltado sobre DropZone
         if (eventData.pointerEnter != null && eventData.pointerEnter.name == "DropZone")
         {
             rectTransform.SetParent(eventData.pointerEnter.transform);

@@ -11818,6 +11818,10 @@ MonoBehaviour:
   titleText: {fileID: 494624476}
   descriptionText: {fileID: 1246388835}
   btnBack: {fileID: 1953206518}
+  rotationSpeed: 0.2
+  zoomSpeed: 0.5
+  minZoom: 0.3
+  maxZoom: 2.5
 --- !u!1 &1076427532
 GameObject:
   m_ObjectHideFlags: 0
@@ -22442,13 +22446,13 @@ MonoBehaviour:
   - {fileID: 133930129}
   - {fileID: 2018355508}
   - {fileID: 19895959}
+  - {fileID: 726879835}
   - {fileID: 536256440}
   - {fileID: 1052538193}
   - {fileID: 1420885930}
   - {fileID: 1654855699}
   - {fileID: 1762374494}
   - {fileID: 381566203}
-  - {fileID: 726879835}
 --- !u!4 &1888867488
 Transform:
   m_ObjectHideFlags: 0
@@ -23056,6 +23060,10 @@ MonoBehaviour:
   placedObjectsContainer: {fileID: 1585285120}
   currentCanvas: {fileID: 1951642692}
   nextCanvas: {fileID: 1128420822}
+  rotationSpeed: 0.2
+  zoomSpeed: 0.5
+  minZoom: 0.3
+  maxZoom: 1.5
 --- !u!1 &1951664566
 GameObject:
   m_ObjectHideFlags: 0

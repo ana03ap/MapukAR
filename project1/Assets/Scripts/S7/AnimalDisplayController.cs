@@ -1,96 +1,5 @@
 
 
-
-//using UnityEngine;
-//using TMPro;
-//using DG.Tweening;
-
-//public class AnimalDisplayController : MonoBehaviour
-//{
-//    [Header("Canvases de Sección")]
-//    [SerializeField] private GameObject mainMenuCanvas;
-//    [SerializeField] private GameObject animalCanvas;
-//    [SerializeField] private CanvasGroup animalCanvasGroup;
-
-//    [Header("Datos de los animales")]
-//    [SerializeField] private AnimalData[] animals;
-
-//    [Header("Elementos UI dentro de AnimalCanvas")]
-//    [SerializeField] private TMP_Text titleText;
-//    [SerializeField] private TMP_Text descriptionText;
-//    [SerializeField] private GameObject btnBack;
-
-//    private GameObject currentModel;
-
-//    void Start()
-//    {
-//        mainMenuCanvas.SetActive(true);
-//        animalCanvas.SetActive(false);
-//        animalCanvasGroup.alpha = 0f;
-
-//        btnBack.GetComponent<UnityEngine.UI.Button>()
-//               .onClick.AddListener(HideAnimal);
-//    }
-
-//    public void ShowAnimal(int index)
-//    {
-//        if (index < 0 || index >= animals.Length) return;
-//        StartCoroutine(ShowAnimalRoutine(index));
-//    }
-
-//    private System.Collections.IEnumerator ShowAnimalRoutine(int index)
-//    {
-//        // Activar canvas y ocultar menú
-//        animalCanvas.SetActive(true);
-//        animalCanvasGroup.alpha = 0f;
-//        mainMenuCanvas.SetActive(false);
-
-//        // Esperar a que el canvas se inicialice correctamente
-//        yield return new WaitForEndOfFrame();
-
-//        // Obtener datos del animal
-//        var data = animals[index];
-//        titleText.text = data.animalName;
-//        descriptionText.text = data.description;
-
-//        // Eliminar modelo anterior si existe
-//        if (currentModel != null)
-//        {
-//            Destroy(currentModel);
-//        }
-
-//        // Instanciar modelo justo al frente de la cámara
-//        Camera cam = Camera.main;
-//        Vector3 spawnPosition = cam.transform.position + cam.transform.forward * 1.5f;
-//        Quaternion lookRotation = Quaternion.LookRotation(-cam.transform.forward); // que mire hacia el usuario
-
-//        currentModel = Instantiate(
-//            data.prefab,
-//            spawnPosition,
-//            lookRotation
-//        );
-
-//        // Animar aparición del canvas
-//        animalCanvasGroup.DOFade(1f, 0.5f);
-//    }
-
-//    public void HideAnimal()
-//    {
-//        animalCanvasGroup.alpha = 0f;
-//        animalCanvas.SetActive(false);
-
-//        if (currentModel != null)
-//        {
-//            Destroy(currentModel);
-//            currentModel = null;
-//        }
-
-//        mainMenuCanvas.SetActive(true);
-//    }
-//}
-
-
-
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
@@ -112,9 +21,9 @@ public class AnimalDisplayController : MonoBehaviour
 
     [Header("Interacción con el modelo")]
     [SerializeField] private float rotationSpeed = 0.2f;
-    [SerializeField] private float zoomSpeed = 0.5f;
+    [SerializeField] private float zoomSpeed = 0.08f;
     [SerializeField] private float minZoom = 0.3f;
-    [SerializeField] private float maxZoom = 2.5f;
+    [SerializeField] private float maxZoom = 1.0f;
 
     private GameObject currentModel;
 
@@ -188,7 +97,7 @@ public class AnimalDisplayController : MonoBehaviour
         HandleTouchRotation();
         HandleMouseRotation();
         HandleKeyboardRotation();
-        HandleZoom();
+        //HandleZoom();
     }
 
     private void HandleTouchRotation()

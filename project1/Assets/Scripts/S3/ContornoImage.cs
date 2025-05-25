@@ -10,21 +10,49 @@ public class ColoringGame : MonoBehaviour
 
     public Canvas currentCanvas;
     public Canvas nextCanvas;
+    public Image instructionsImage;
     public float completionThreshold = 0.85f;
 
-    public Image finalImage; // La imagen que aparece desde el centro
+    public Image finalImage;         // Imagen final que aparece
+    public Image hintImage;          // Imagen de ayuda animada
 
     private Texture2D paintTexture;
     private bool completed = false;
 
+    private float lastPaintTime;
+    private float currentProgress = 0f;
+    private float hintIdleThreshold = 15f;
+    private bool hintVisible = false;
+    [Header("Horneado")]
+    public GrowImageOnClick horneadoScript; // Referencia al script de horneado
+
+
     void Start()
     {
-        ResetGame(); // Inicializa correctamente
+        ResetGame();
     }
 
     void Update()
     {
         if (completed) return;
+
+        // Mostrar ayuda si se cumple condición
+        bool showHint = currentProgress == 0f || (Time.time - lastPaintTime > hintIdleThreshold);
+        if (showHint && !hintVisible)
+        {
+            ShowHint();
+        }
+        else if (!showHint && hintVisible)
+        {
+            HideHint();
+        }
+
+        // Animar si visible
+        if (hintVisible)
+        {
+            float offset = Mathf.Sin(Time.time * 2f) * 10f; // Desplazamiento suave
+            hintImage.rectTransform.anchoredPosition = new Vector2(offset, hintImage.rectTransform.anchoredPosition.y);
+        }
 
         if (Input.GetMouseButton(0))
         {
@@ -48,7 +76,7 @@ public class ColoringGame : MonoBehaviour
 
     void Paint(int x, int y)
     {
-        int radius = 50;
+        int radius = 70;
 
         for (int dx = -radius; dx <= radius; dx++)
         {
@@ -93,6 +121,13 @@ public class ColoringGame : MonoBehaviour
 
         float percent = (float)filled / total;
 
+        // Si el progreso aumentó, actualiza el tiempo
+        if (percent > currentProgress)
+        {
+            lastPaintTime = Time.time;
+            currentProgress = percent;
+        }
+
         if (!completed && percent >= completionThreshold)
         {
             completed = true;
@@ -129,23 +164,42 @@ public class ColoringGame : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        ResetGame(); // 🔁 Primero reiniciamos para evitar modificar elementos desactivados
+        ResetGame();
 
         if (currentCanvas != null) currentCanvas.gameObject.SetActive(false);
         if (nextCanvas != null) nextCanvas.gameObject.SetActive(true);
     }
 
+    void ShowHint()
+    {
+        if (hintImage != null)
+        {
+            hintImage.gameObject.SetActive(true);
+            hintVisible = true;
+        }
+    }
+
+    void HideHint()
+    {
+        if (hintImage != null)
+        {
+            hintImage.gameObject.SetActive(false);
+            hintVisible = false;
+            hintImage.rectTransform.anchoredPosition = Vector2.zero; // Reset posición
+        }
+    }
+
     void ResetGame()
     {
         completed = false;
+        currentProgress = 0f;
+        lastPaintTime = Time.time;
 
-        // Restaurar textura
         paintTexture = new Texture2D(sourceTexture.width, sourceTexture.height);
         paintTexture.SetPixels(sourceTexture.GetPixels());
         paintTexture.Apply();
         paintingArea.texture = paintTexture;
 
-        // Mostrar pintura, ocultar imagen final
         if (paintingArea != null) paintingArea.gameObject.SetActive(true);
         if (finalImage != null)
         {
@@ -156,8 +210,16 @@ public class ColoringGame : MonoBehaviour
             if (group != null) group.alpha = 1;
         }
 
-        // Canvas state inicial
+        if (hintImage != null)
+        {
+            hintImage.gameObject.SetActive(false);
+            hintVisible = false;
+        }
+
         if (nextCanvas != null) nextCanvas.gameObject.SetActive(false);
         if (currentCanvas != null) currentCanvas.gameObject.SetActive(true);
+        if (instructionsImage != null) instructionsImage.gameObject.SetActive(true);
+        if (horneadoScript != null) horneadoScript.ResetGame(); // ✅ Resetea el horneado
+
     }
 }

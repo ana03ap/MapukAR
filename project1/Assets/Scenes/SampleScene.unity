@@ -3346,11 +3346,11 @@ MonoBehaviour:
   aRTrackedImageManager: {fileID: 223974232}
   aRModelsToPlace:
   - {fileID: -8098169881513260187, guid: 500d8a7a20d640bc58ba7ff529304dbb, type: 3}
-  - {fileID: 4814140183114437194, guid: 2d5d36a97ee082eb0931fe77b40fa15e, type: 3}
+  - {fileID: 4814140183114437194, guid: a71f4efc42985fd89bf53a8a7fe8d2f4, type: 3}
   - {fileID: -8098169881513260187, guid: 97898e1511577436fa18aecdb2e5407b, type: 3}
   - {fileID: -8098169881513260187, guid: 2243b451b75858f0e90ac5fc36c50e79, type: 3}
   - {fileID: 4814140183114437194, guid: 3d66a041a385a7a62abe76bb8d442abf, type: 3}
-  - {fileID: -8098169881513260187, guid: a383ac97d3d1a126dab6d2dbbc321933, type: 3}
+  - {fileID: -8098169881513260187, guid: 11c6e7bc092b7cf779c031db77512c7f, type: 3}
   targetCanvas: {fileID: 1777987878}
   infoCanvases:
   - {fileID: 1479824077}
@@ -25572,7 +25572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sections:
   - {fileID: 133930129}
-  - {fileID: 1420885930}
+  - {fileID: 2018355508}
   - {fileID: 19895959}
   - {fileID: 726879835}
   - {fileID: 536256440}

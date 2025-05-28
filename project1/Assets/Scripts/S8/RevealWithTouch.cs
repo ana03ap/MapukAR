@@ -8,16 +8,36 @@ public class RevealWithTouch : MonoBehaviour, IPointerDownHandler, IDragHandler
     public float radius = 50f;            // Tamaño del "borrado"
 
     private Texture2D workingTexture;
+    private Texture2D originalTexture;
     private RectTransform rectTransform;
 
     void Start()
     {
         rectTransform = rawImage.rectTransform;
 
-        // Copiar la textura original para editarla
+        // Guardar la textura original
         Texture2D sourceTex = (Texture2D)rawImage.texture;
-        workingTexture = new Texture2D(sourceTex.width, sourceTex.height, TextureFormat.ARGB32, false);
-        workingTexture.SetPixels(sourceTex.GetPixels());
+        originalTexture = new Texture2D(sourceTex.width, sourceTex.height, TextureFormat.ARGB32, false);
+        originalTexture.SetPixels(sourceTex.GetPixels());
+        originalTexture.Apply();
+
+        // Inicializar textura editable
+        ResetWorkingTexture();
+    }
+
+    // Se ejecuta cada vez que se activa el objeto/canvas
+    void OnEnable()
+    {
+        if (originalTexture != null)
+        {
+            ResetWorkingTexture();
+        }
+    }
+
+    private void ResetWorkingTexture()
+    {
+        workingTexture = new Texture2D(originalTexture.width, originalTexture.height, TextureFormat.ARGB32, false);
+        workingTexture.SetPixels(originalTexture.GetPixels());
         workingTexture.Apply();
 
         rawImage.texture = workingTexture;
@@ -35,7 +55,6 @@ public class RevealWithTouch : MonoBehaviour, IPointerDownHandler, IDragHandler
 
     void Update()
     {
-        // Permite probar en PC con clic del mouse
         if (Input.GetMouseButton(0))
         {
             HandleTouch(Input.mousePosition);

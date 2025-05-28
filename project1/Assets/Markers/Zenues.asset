@@ -73,7 +73,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 11390024729523442605
       m_GuidHigh: 8422748357376056136
-    m_Size: {x: 2, y: 1.5}
+    m_Size: {x: 1.3333334, y: 1}
     m_SpecifySize: 1
     m_Name: Copa
     m_Texture: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 17894088306509547020
       m_GuidHigh: 9483361230305174507
-    m_Size: {x: 1.5, y: 1.125}
+    m_Size: {x: 1, y: 0.75}
     m_SpecifySize: 1
     m_Name: Lebrillo
     m_Texture: {fileID: 0}

@@ -100,6 +100,20 @@ public class AnimalDisplayController : MonoBehaviour
         //HandleZoom();
     }
 
+    //private void HandleTouchRotation()
+    //{
+    //    if (Input.touchCount == 1)
+    //    {
+    //        Touch touch = Input.GetTouch(0);
+    //        if (touch.phase == TouchPhase.Moved)
+    //        {
+    //            float rotationAmount = touch.deltaPosition.x * rotationSpeed;
+    //            currentModel.transform.Rotate(0f, -rotationAmount, 0f, Space.World);
+    //        }
+    //    }
+    //}
+
+
     private void HandleTouchRotation()
     {
         if (Input.touchCount == 1)
@@ -107,8 +121,12 @@ public class AnimalDisplayController : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
-                float rotationAmount = touch.deltaPosition.x * rotationSpeed;
-                currentModel.transform.Rotate(0f, -rotationAmount, 0f, Space.World);
+                // Tomamos los desplazamientos vertical y horizontal del dedo
+                float rotationX = touch.deltaPosition.y * rotationSpeed;   // eje X (vertical)
+                float rotationY = -touch.deltaPosition.x * rotationSpeed;  // eje Y (horizontal)
+
+                // Aplicamos rotación alrededor de los ejes X e Y en espacio mundial (como en el primer script)
+                currentModel.transform.Rotate(rotationX, rotationY, 0f, Space.World);
             }
         }
     }

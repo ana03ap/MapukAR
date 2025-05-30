@@ -1,13 +1,10 @@
-﻿
-
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class S5Canvas1 : MonoBehaviour
 {
-    [SerializeField] private GameObject megalaniaPrefab;
+    [SerializeField] private GameObject prefab;
     [SerializeField] private Transform placedObjectsContainer;
     [SerializeField] private GameObject currentCanvas;
     [SerializeField] private GameObject nextCanvas;
@@ -22,21 +19,21 @@ public class S5Canvas1 : MonoBehaviour
     void OnEnable()
     {
         ClearPlacedObjects();
-        ShowMegalania();
+        Show();
     }
 
     void OnDisable()
     {
-        ClearPlacedObjects(); // borra el modelo si se apaga el canvas
+        ClearPlacedObjects(); 
     }
 
-    public void ShowMegalania()
+    public void Show()
     {
         var cam = Camera.main.transform;
         Vector3 spawnPos = cam.position + cam.forward * 0.7f;
 
         currentModel = Instantiate(
-            megalaniaPrefab,
+            prefab,
             spawnPos,
             Quaternion.LookRotation(cam.forward),
             placedObjectsContainer
@@ -63,7 +60,7 @@ public class S5Canvas1 : MonoBehaviour
         HandleTouchRotation();
         HandleMouseRotation();
         HandleKeyboardRotation();
-        //HandleZoom();
+
     }
 
     private void HandleTouchRotation()
@@ -90,37 +87,11 @@ public class S5Canvas1 : MonoBehaviour
 
     private void HandleKeyboardRotation()
     {
-        float horizontal = Input.GetAxis("Horizontal"); // A/D o ← →
+        float horizontal = Input.GetAxis("Horizontal"); // se mueve también con las flechas del teclado
         currentModel.transform.Rotate(0f, horizontal * 100f * Time.deltaTime, 0f, Space.World);
     }
 
-    private void HandleZoom()
-    {
-        Vector3 direction = currentModel.transform.forward;
 
-        // Zoom móvil
-        if (Input.touchCount == 2)
-        {
-            Touch t0 = Input.GetTouch(0);
-            Touch t1 = Input.GetTouch(1);
-
-            Vector2 prevT0 = t0.position - t0.deltaPosition;
-            Vector2 prevT1 = t1.position - t1.deltaPosition;
-
-            float prevDist = (prevT0 - prevT1).magnitude;
-            float currentDist = (t0.position - t1.position).magnitude;
-
-            float delta = (currentDist - prevDist) * zoomSpeed * Time.deltaTime;
-            ApplyZoom(delta);
-        }
-
-        // Zoom PC
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (Mathf.Abs(scroll) > 0.001f)
-        {
-            ApplyZoom(scroll * zoomSpeed);
-        }
-    }
 
     private void ApplyZoom(float amount)
     {

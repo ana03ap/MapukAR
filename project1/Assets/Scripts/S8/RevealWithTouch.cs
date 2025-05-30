@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 
 public class RevealWithTouch : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
-    public RawImage rawImage;             // La imagen superior
-    public float radius = 50f;            // Tamaño del "borrado"
+    public RawImage rawImage;            
+    public float radius = 50f;     
 
     private Texture2D workingTexture;
     private Texture2D originalTexture;
@@ -15,17 +15,15 @@ public class RevealWithTouch : MonoBehaviour, IPointerDownHandler, IDragHandler
     {
         rectTransform = rawImage.rectTransform;
 
-        // Guardar la textura original
+        // guardar la textura original
         Texture2D sourceTex = (Texture2D)rawImage.texture;
         originalTexture = new Texture2D(sourceTex.width, sourceTex.height, TextureFormat.ARGB32, false);
         originalTexture.SetPixels(sourceTex.GetPixels());
         originalTexture.Apply();
 
-        // Inicializar textura editable
         ResetWorkingTexture();
     }
 
-    // Se ejecuta cada vez que se activa el objeto/canvas
     void OnEnable()
     {
         if (originalTexture != null)

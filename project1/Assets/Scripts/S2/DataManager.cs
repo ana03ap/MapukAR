@@ -1,19 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-
 using System;
-
-
 
 public class DataManager : MonoBehaviour
 {
-
-    //[SerializeField] → Permite que estas variables sean visibles y editables en el Inspector de Unity sin ser públicas.
     [SerializeField] private List<Item> items = new List<Item>();
     [SerializeField] private GameObject buttonContainer;
     [SerializeField] private ItemButtonManager itemButtonManager;
-
-    // Start is called before the first frame update
     void Start()
     {
         GameManager.instance.OnItemsMenu += CreateButtons;

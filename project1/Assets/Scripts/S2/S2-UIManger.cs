@@ -5,13 +5,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class S2UIManager : MonoBehaviour
+
+//EN ESTE SCRIPT, SE ESTA HACIENDO EL CAMBIO DE CANVAS CON LA DIFERENCIA QUE SE ESTÁ HACIENDO QUITANDO Y PONIENDO LA ESCALA, 
+//NO SOLO SETIANDO TRUE O FALSE, PARA QUE SE PUEDA HACER UNA ANIMACIÓN DE ESCALA EN LOS CANVAS. es especificamente solo del s2, sin embargo podria cambairse por canvasmanager 
+
+
 {
     [SerializeField] private GameObject mainPPL;
     [SerializeField] private GameObject mainMenuCanvas;
     [SerializeField] private GameObject itemsMenuCanvas;
     [SerializeField] private GameObject ARPositionCanvas;
-
-    [SerializeField] private GameObject instructionPanel; // NUEVO
+    [SerializeField] private GameObject instructionPanel; 
 
     void OnEnable()
     {
@@ -21,15 +25,12 @@ public class S2UIManager : MonoBehaviour
         GameManager.instance.OnARPosition += ActivateARPosition;
     }
 
-    //--------/nuevo 
     private void ResetAllCanvases()
     {
         mainPPL.SetActive(false);
         mainMenuCanvas.SetActive(false);
         itemsMenuCanvas.SetActive(false);
         ARPositionCanvas.SetActive(false);
-
-
         instructionPanel.SetActive(false);
 
     }
@@ -39,12 +40,9 @@ public class S2UIManager : MonoBehaviour
 
         ResetAllCanvases();
         mainPPL.SetActive(true);
-
-
         mainPPL.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainPPL.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainPPL.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
 
@@ -62,14 +60,13 @@ public class S2UIManager : MonoBehaviour
 
         mainMenuCanvas.transform.GetChild(0).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
         mainMenuCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
-        mainMenuCanvas.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);//NUEVO PARA INTRUCCIONES
+        mainMenuCanvas.transform.GetChild(2).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
 
 
         ARPositionCanvas.transform.DOMoveY(180, 0.3f);
 
 
 
-        // Asegurar que mainPPL está desactivado y en escala cero
         ResetCanvas(mainPPL);
         ResetCanvas(itemsMenuCanvas);
         ResetCanvas(ARPositionCanvas);
@@ -87,7 +84,7 @@ public class S2UIManager : MonoBehaviour
         itemsMenuCanvas.transform.GetChild(1).transform.DOMoveY(300, 0.3f);
 
 
-        // Asegurar otros elementos desactivados
+
         ResetCanvas(mainPPL);
         ResetCanvas(mainMenuCanvas);
         ResetCanvas(ARPositionCanvas);
@@ -103,7 +100,7 @@ public class S2UIManager : MonoBehaviour
         ARPositionCanvas.transform.GetChild(1).transform.DOScale(new Vector3(1, 1, 1), 0.3f);
 
 
-        // Asegurar otros elementos desactivados
+ 
         ResetCanvas(mainPPL);
         ResetCanvas(mainMenuCanvas);
         ResetCanvas(itemsMenuCanvas);
@@ -115,14 +112,11 @@ public class S2UIManager : MonoBehaviour
     private void ResetCanvas(GameObject canvas)
     {
         if (canvas == null) return;
-
-        // Resetear escala de todos los hijos
         foreach (Transform child in canvas.transform)
         {
             child.localScale = Vector3.zero;
         }
 
-        // Resetear posición si es necesario (para ARPosition)
         if (canvas == ARPositionCanvas)
         {
             canvas.transform.GetChild(1).localPosition = new Vector3(
@@ -141,19 +135,16 @@ public class S2UIManager : MonoBehaviour
         }
     }
 
-
-
-    // NUEVOS MÉTODOS para las instrucciones
     public void ShowInstructions()
 {
     instructionPanel.SetActive(true);
-    instructionPanel.transform.localScale = Vector3.one; // 
+    instructionPanel.transform.localScale = Vector3.one; 
 }
 
 public void HideInstructions()
 {
     instructionPanel.SetActive(false);
-    instructionPanel.transform.localScale = Vector3.zero; // 
+    instructionPanel.transform.localScale = Vector3.zero;
 }
 
 }

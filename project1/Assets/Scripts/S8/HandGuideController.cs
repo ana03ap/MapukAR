@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class HandGuideController : MonoBehaviour
 {
-    public RectTransform handTransform;  // Asignar el objeto UI de la mano
-    public float distance = 150f;        // Qué tan lejos se mueve
-    public float duration = 0.8f;        // Duración del movimiento
+    public RectTransform handTransform;  
+    public float distance = 150f;        
+    public float duration = 0.8f;  
     public int tapsToHide = 2;
 
     private int tapCount = 0;
@@ -17,7 +17,7 @@ public class HandGuideController : MonoBehaviour
     void Start()
     {
         startPos = handTransform.anchoredPosition;
-        endPos = startPos + new Vector2(-distance, -distance); // diagonal hacia abajo izquierda
+        endPos = startPos + new Vector2(-distance, -distance); 
         AnimateLoop();
     }
 
@@ -48,7 +48,7 @@ public class HandGuideController : MonoBehaviour
 
     void HideHand()
     {
-        handTransform.DOKill(); // Detiene la animación
+        handTransform.DOKill(); 
         handTransform.gameObject.SetActive(false);
     }
 }

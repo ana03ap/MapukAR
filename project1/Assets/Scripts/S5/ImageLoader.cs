@@ -14,14 +14,11 @@ public class ImageLoader : MonoBehaviour
 
     void Start()
     {
-        // Validación rápida
-        if (buttons.Length != collarSprites.Length)
-            Debug.LogWarning("¡Sprites y botones no coinciden en cantidad!");
 
-        // Suscribir cada botón a mostrar el sprite correspondiente
+        if (buttons.Length != collarSprites.Length)
         for (int i = 0; i < buttons.Length; i++)
         {
-            int idx = i;  // captura local
+            int idx = i; 
             buttons[i].onClick.AddListener(() => ShowSprite(idx));
         }
     }

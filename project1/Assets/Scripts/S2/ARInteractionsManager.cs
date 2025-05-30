@@ -9,14 +9,9 @@ public class ARInteractionsManager : MonoBehaviour
 
     [Header("Container for Placed Objects")]
     [SerializeField] private Transform placedObjectsContainer;
-
-
-
-
-
     [SerializeField] private Camera arCamera;
-    [SerializeField] private float moveSpeed = 0.0005f; // Ajusta para velocidad de movimiento
-    [SerializeField] private float scaleFactor = 0.25f;  // Tamaño relativo del modelo
+    [SerializeField] private float moveSpeed = 0.0005f; 
+    [SerializeField] private float scaleFactor = 0.25f;  
 
 
 
@@ -37,21 +32,13 @@ public class ARInteractionsManager : MonoBehaviour
             if (arPointer != null && item3DModel != null)
             {
                 arPointer.SetActive(true);
-
-                // Posicionar el puntero a 0.6 metros frente al usuario
                 Vector3 forward = arCamera.transform.forward * 0.6f;
                 arPointer.transform.position = arCamera.transform.position + forward;
-
-                // Escalar modelo de forma global y centrado sobre el puntero
-                item3DModel.transform.localScale = Vector3.one; // Reset
+                item3DModel.transform.localScale = Vector3.one; 
                 item3DModel.transform.SetParent(null);
                 item3DModel.transform.localScale = Vector3.one * scaleFactor;
                 item3DModel.transform.SetParent(arPointer.transform);
-
-                // Centrar y apoyar el modelo sobre el puntero visual (ajustar Y según el modelo)
                 item3DModel.transform.localPosition = new Vector3(0f, -0.1f, 0f);
-
-
                 isPlacing = true;
             }
         }
@@ -84,7 +71,6 @@ public class ARInteractionsManager : MonoBehaviour
             Vector2 delta = touch.position - lastTouchPosition;
             lastTouchPosition = touch.position;
 
-            // Movimiento libre en X, Y, Z con respecto a la cámara
             Vector3 right = arCamera.transform.right;
             Vector3 up = arCamera.transform.up;
             Vector3 forward = arCamera.transform.forward;
@@ -114,14 +100,9 @@ public class ARInteractionsManager : MonoBehaviour
     {
         if (item3DModel != null)
         {
-           
-
-            // parent al bucket en lugar de raíz
             item3DModel.transform.SetParent(placedObjectsContainer, worldPositionStays: true);
-
             arPointer.SetActive(false);
             isPlacing = false;
-            //item3DModel = null;
         }
     }
 
@@ -140,7 +121,6 @@ public class ARInteractionsManager : MonoBehaviour
 
     public void ClearPlacedObjects()
     {
-        // Destruye todos los hijos
         foreach (Transform child in placedObjectsContainer)
         {
             Destroy(child.gameObject);

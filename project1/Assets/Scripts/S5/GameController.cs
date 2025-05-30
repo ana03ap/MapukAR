@@ -6,22 +6,19 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-    public GameObject actual;       // Canvas1 (activará el modelo 3D)
-    public GameObject modelo3D;       // Canvas1 (activará el modelo 3D)
-    public GameObject popupFinal;     // Panel de información (opcional)
+    public GameObject actual;       
+    public GameObject modelo3D;       
+  
 
 
-    public DragPiece[] piezas; // asígnalas desde el inspector (las 4 piezas del rompecabezas)
+    public DragPiece[] piezas; 
 
     private HashSet<string> piezasColocadas = new HashSet<string>();
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
-
-        // Asegúrate de iniciar ocultando el resultado
         if (modelo3D != null) modelo3D.SetActive(false);
-        if (popupFinal != null) popupFinal.SetActive(false);
     }
 
     public void PiezaColocada(string id)
@@ -31,20 +28,14 @@ public class GameController : MonoBehaviour
 
         if (piezasColocadas.Count == 6)
         {
-            // Resetear piezas antes de cambiar de canvas
             foreach (DragPiece pieza in piezas)
             {
                 pieza.ResetPiece();
             }
 
-            piezasColocadas.Clear(); // por si vuelves a hacer el juego
-
-
+            piezasColocadas.Clear(); 
             actual.SetActive(false);
             MostrarModelo3DAnimado();
-
-
-            if (popupFinal != null) popupFinal.SetActive(true);
         }
     }
 
@@ -57,8 +48,8 @@ public class GameController : MonoBehaviour
 
         foreach (Transform child in modelo3D.transform)
         {
-            child.localScale = Vector3.zero; // Oculta primero
-            child.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack); // Animación elegante
+            child.localScale = Vector3.zero; 
+            child.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutBack); 
         }
     }
 

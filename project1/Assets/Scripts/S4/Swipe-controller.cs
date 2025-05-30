@@ -11,7 +11,7 @@ public class SwipeInstructionUI : MonoBehaviour
 
     void OnEnable()
     {
-        // Reinicia todo al entrar de nuevo a la sección
+
         swipeDetected = false;
 
         if (instructionImage != null)

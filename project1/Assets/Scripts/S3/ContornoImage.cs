@@ -13,8 +13,8 @@ public class ColoringGame : MonoBehaviour
     public Image instructionsImage;
     public float completionThreshold = 0.85f;
 
-    public Image finalImage;         // Imagen final que aparece
-    public Image hintImage;          // Imagen de ayuda animada
+    public Image finalImage;         // Imagen final 
+    public Image hintImage;          // Imagen de ayuda 
 
     private Texture2D paintTexture;
     private bool completed = false;
@@ -36,7 +36,7 @@ public class ColoringGame : MonoBehaviour
     {
         if (completed) return;
 
-        // Mostrar ayuda si se cumple condición
+        
         bool showHint = currentProgress == 0f || (Time.time - lastPaintTime > hintIdleThreshold);
         if (showHint && !hintVisible)
         {
@@ -47,10 +47,10 @@ public class ColoringGame : MonoBehaviour
             HideHint();
         }
 
-        // Animar si visible
+        
         if (hintVisible)
         {
-            float offset = Mathf.Sin(Time.time * 2f) * 10f; // Desplazamiento suave
+            float offset = Mathf.Sin(Time.time * 2f) * 10f; 
             hintImage.rectTransform.anchoredPosition = new Vector2(offset, hintImage.rectTransform.anchoredPosition.y);
         }
 
@@ -121,7 +121,7 @@ public class ColoringGame : MonoBehaviour
 
         float percent = (float)filled / total;
 
-        // Si el progreso aumentó, actualiza el tiempo
+        // Si el progreso aumentó, actualiza el tiempo DEBERIA DE CAMBBIARSE A UN CAMBIO SMOOTH
         if (percent > currentProgress)
         {
             lastPaintTime = Time.time;
@@ -219,7 +219,7 @@ public class ColoringGame : MonoBehaviour
         if (nextCanvas != null) nextCanvas.gameObject.SetActive(false);
         if (currentCanvas != null) currentCanvas.gameObject.SetActive(true);
         if (instructionsImage != null) instructionsImage.gameObject.SetActive(true);
-        if (horneadoScript != null) horneadoScript.ResetGame(); // ✅ Resetea el horneado
+        if (horneadoScript != null) horneadoScript.ResetGame(); 
 
     }
 }

@@ -21,7 +21,6 @@ public class Section8ARManager : MonoBehaviour
 
     void Start()
     {
-        // Instanciar modelos y guardarlos en diccionarios
         foreach (var modelPrefab in aRModelsToPlace)
         {
             GameObject instance = Instantiate(modelPrefab, Vector3.zero, Quaternion.identity);
@@ -45,7 +44,6 @@ public class Section8ARManager : MonoBehaviour
 
     void Update()
     {
-        // Solo activar rotación si el canvas de Sección 9 está activo
         if (targetCanvas != null && targetCanvas.gameObject.activeSelf)
         {
             HandleTouchRotation();

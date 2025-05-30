@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CloseInstructions : MonoBehaviour
 {
-    // GameObject que se activará después de cerrar la imagen
+    // gameobject que se activará después de cerrar la imagen
     public GameObject objectToShow;
 
-    // Esta función se conecta al botón y toma una imagen como parámetro
+    // esta funcíon se conecta al boton y toma una imagen como parametro
     public void Close(Image imageToHide)
     {
         if (imageToHide != null)

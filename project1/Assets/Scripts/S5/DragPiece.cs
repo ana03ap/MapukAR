@@ -9,7 +9,7 @@ public class DragPiece : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     private Vector3 originalPosition;
     private bool yaTienePosicionInicial = false;
 
-    public string pieceID; // ejemplo: "pieza1", "pieza2", etc.
+    public string pieceID; // cualquiera, solo que sea identificable al resto de piezas
 
     private void Awake()
     {

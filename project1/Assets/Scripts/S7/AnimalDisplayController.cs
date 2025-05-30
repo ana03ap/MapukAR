@@ -1,5 +1,3 @@
-
-
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
@@ -97,22 +95,8 @@ public class AnimalDisplayController : MonoBehaviour
         HandleTouchRotation();
         HandleMouseRotation();
         HandleKeyboardRotation();
-        //HandleZoom();
+      
     }
-
-    //private void HandleTouchRotation()
-    //{
-    //    if (Input.touchCount == 1)
-    //    {
-    //        Touch touch = Input.GetTouch(0);
-    //        if (touch.phase == TouchPhase.Moved)
-    //        {
-    //            float rotationAmount = touch.deltaPosition.x * rotationSpeed;
-    //            currentModel.transform.Rotate(0f, -rotationAmount, 0f, Space.World);
-    //        }
-    //    }
-    //}
-
 
     private void HandleTouchRotation()
     {
@@ -121,11 +105,9 @@ public class AnimalDisplayController : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if (touch.phase == TouchPhase.Moved)
             {
-                // Tomamos los desplazamientos vertical y horizontal del dedo
-                float rotationX = touch.deltaPosition.y * rotationSpeed;   // eje X (vertical)
-                float rotationY = -touch.deltaPosition.x * rotationSpeed;  // eje Y (horizontal)
-
-                // Aplicamos rotación alrededor de los ejes X e Y en espacio mundial (como en el primer script)
+                
+                float rotationX = touch.deltaPosition.y * rotationSpeed;   
+                float rotationY = -touch.deltaPosition.x * rotationSpeed; 
                 currentModel.transform.Rotate(rotationX, rotationY, 0f, Space.World);
             }
         }
@@ -144,46 +126,6 @@ public class AnimalDisplayController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         currentModel.transform.Rotate(0f, horizontal * 100f * Time.deltaTime, 0f, Space.World);
-    }
-
-    private void HandleZoom()
-    {
-        Vector3 direction = currentModel.transform.forward;
-
-        // Zoom con dos dedos
-        if (Input.touchCount == 2)
-        {
-            Touch t0 = Input.GetTouch(0);
-            Touch t1 = Input.GetTouch(1);
-
-            Vector2 prevT0 = t0.position - t0.deltaPosition;
-            Vector2 prevT1 = t1.position - t1.deltaPosition;
-
-            float prevDist = (prevT0 - prevT1).magnitude;
-            float currentDist = (t0.position - t1.position).magnitude;
-
-            float delta = (currentDist - prevDist) * zoomSpeed * Time.deltaTime;
-            ApplyZoom(delta);
-        }
-
-        // Zoom con scroll en PC
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (Mathf.Abs(scroll) > 0.001f)
-        {
-            ApplyZoom(scroll * zoomSpeed);
-        }
-    }
-
-    private void ApplyZoom(float amount)
-    {
-        Vector3 direction = currentModel.transform.forward;
-        Vector3 newPos = currentModel.transform.position + direction * amount;
-
-        float distance = Vector3.Distance(Camera.main.transform.position, newPos);
-        if (distance >= minZoom && distance <= maxZoom)
-        {
-            currentModel.transform.position = newPos;
-        }
     }
 }
 

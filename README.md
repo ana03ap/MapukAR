@@ -32,10 +32,10 @@ Integrar tecnología de realidad aumentada y juegos interactivos como herramient
 ```
 Assets/
 ├── 3DModels/                # Modelos de animales y artefactos arqueológicos
-├── Scripts/                # Controladores de secciones, AR, juegos y UI
-├── Scenes/                 # Escena principal del recorrido
-├── Plugins/, XR/, Prefabs/ # Dependencias y modelos reutilizables
-├── S1-image/ a S8-image/   # Recursos por sección
+├── Scripts/                 # Controladores de secciones, AR, juegos y UI
+├── Scenes/                  # Escena principal del recorrido
+├── Plugins/, XR/, Prefabs/  # Dependencias y modelos reutilizables
+├── S1-image/ a S8-image/    # Recursos por sección
 ```
 
 ---
@@ -70,14 +70,36 @@ Esta aplicación está instalada exclusivamente en **tablets ubicadas en estacio
 
 ---
 
+## 🤝 Colaboraciones
+
+Este proyecto está abierto a colaboraciones. Si deseas contribuir, por favor:
+
+- Crea un issue describiendo tu propuesta o funcionalidad.
+- Haz un fork del repositorio y envía tu pull request con tus cambios.
+
+¡Todas las contribuciones y sugerencias son bienvenidas!
+
+---
+
+## 🚀 Roadmap
+
+- Agregar nuevas funcionalidades a cada sección
+- Aplicar nuevas animaciones
+- Implementar nuevas interacciones
+- Corregir bugs de los modelos 3D
+- Agregar más modelos 3D
+- Mejorar la responsividad para diferentes tamaños de pantalla (actualmente solo funciona para la tablet del museo)
+
+---
+
 ## 👨‍🎓 Créditos
 
 Desarrollado por estudiantes de Ingeniería de Sistemas  
-**Universidad del Norte - 2025**  
-Proyecto académico en colaboración con el Museo Mapuka
-Ana Ardila
-Darwin Charris
-Emily Roldán
+**Universidad del Norte - 2025-01**  
+Aplicación presentada como proyecto final  
+- Ana Ardila  
+- Darwin Charris  
+- Emily Roldán
 
 ---
 

@@ -5,14 +5,11 @@ using UnityEngine.UI;
 using TMPro;
 public class ItemButtonManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
     private string itemName;
     private string itemDescription;
     private Sprite itemImage;
     private GameObject item3DModel;
-    private ARInteractionsManager interactionsManager;// nueva lina desde video cinco
+    private ARInteractionsManager interactionsManager;
     public string ItemName
     {
         set { itemName = value; }
@@ -44,7 +41,6 @@ public class ItemButtonManager : MonoBehaviour
         interactionsManager = FindObjectOfType<ARInteractionsManager>();
     }
 
-    // Update is called once per frame
     private void Create3DModel()
     {
         interactionsManager.Item3DModel = Instantiate(item3DModel);

@@ -1,35 +1,33 @@
-using UnityEngine;
+锘縰sing UnityEngine;
+
 
 public class SectionFlowManager : MonoBehaviour
 {
-    public GameObject[] sections; // Array que contiene todas las secciones en orden
+    [Tooltip("Lista de GameObjects que representan cada secci贸n completa")]
+    public GameObject[] sections;
+
     private int currentSectionIndex = 0;
 
     void Start()
     {
-        // Al iniciar la app, desactiva todas las secciones excepto la primera (SectionPpl)
+        // asegurarse de solo la primera secci贸n al inicio
         for (int i = 0; i < sections.Length; i++)
         {
-            sections[i].SetActive(i == 0); // solo activa la posici髇 0 (SectionPpl)
+            sections[i].SetActive(i == 0);
         }
+        ResetCanvasFlowInSection(sections[0]);
     }
 
-    // Funci髇 que se llama al presionar el bot髇 "Next" o "Iniciar tour"
     public void GoToNextSection()
     {
         if (currentSectionIndex < sections.Length - 1)
         {
-            // Desactiva la secci髇 actual
             sections[currentSectionIndex].SetActive(false);
-
-            // Avanza el 韓dice a la siguiente secci髇
             currentSectionIndex++;
-
-            // Activa la siguiente secci髇
             sections[currentSectionIndex].SetActive(true);
+            ResetCanvasFlowInSection(sections[currentSectionIndex]);
         }
     }
-
 
     public void GoToPreviousSection()
     {
@@ -38,9 +36,46 @@ public class SectionFlowManager : MonoBehaviour
             sections[currentSectionIndex].SetActive(false);
             currentSectionIndex--;
             sections[currentSectionIndex].SetActive(true);
+            ResetCanvasFlowInSection(sections[currentSectionIndex]);
         }
     }
+
+
+
+    private void ResetCanvasFlowInSection(GameObject section)
+    {
+        Debug.Log($" Reiniciando seccion: {section.name}");
+        CanvasFlowManager flow = section.GetComponentInChildren<CanvasFlowManager>(true);
+        if (flow != null)
+        {
+            flow.ResetToFirstCanvas(); 
+        }
+        Canvas[] canvases = section.GetComponentsInChildren<Canvas>(true);
+
+        foreach (Canvas c in canvases)
+        {
+            c.gameObject.SetActive(false);
+        }
+
+        if (canvases.Length > 0)
+        {
+            canvases[0].gameObject.SetActive(true);
+        }
+        else
+        {
+        }
+
+        // Si estamos en la secci贸n 2, fuerza la activaci贸n del flujo MainPPL
+        if (section.name.Contains("Section2")) 
+        {
+            S2UIManager uiManager = section.GetComponentInChildren<S2UIManager>(true);
+            if (uiManager != null)
+            {
+                GameManager.instance.MainPPl(); // llamar OnMainppl?.Invoke()
+            }
+        }
+    }
+
+
 }
 
-
-//ESTO VA UNO POR UNO, ENTONCES SI ME VUELO UN BOTON YA LA EMBARRO PORQUE VA ESPECIFICAMENTE UNO POR UNO

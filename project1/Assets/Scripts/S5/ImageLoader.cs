@@ -14,18 +14,25 @@ public class ImageLoader : MonoBehaviour
 
     void Start()
     {
-
         if (buttons.Length != collarSprites.Length)
+        {
+            Debug.LogError("El número de botones y sprites no coincide.");
+            return;
+        }
+
         for (int i = 0; i < buttons.Length; i++)
         {
-            int idx = i; 
+            int idx = i;
             buttons[i].onClick.AddListener(() => ShowSprite(idx));
         }
     }
 
+
     private void ShowSprite(int index)
     {
+        Debug.Log("Mostrando sprite " + index);
         if (index < 0 || index >= collarSprites.Length) return;
         mainImage.sprite = collarSprites[index];
     }
+
 }

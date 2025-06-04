@@ -25964,7 +25964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcf44f725a094945b212239b745f8fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1087710983784397121, guid: 3e67469aec7370d49b2ab07508a78ab9, type: 3}
   placedObjectsContainer: {fileID: 1585285120}
   currentCanvas: {fileID: 1951642692}
   nextCanvas: {fileID: 1128420822}
